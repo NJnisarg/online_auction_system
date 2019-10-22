@@ -18,7 +18,6 @@ conn.connect((err)=> {
     }
 
     console.log("Connected successfully. Connection information:" + conn);
-    return;
 
 });
 

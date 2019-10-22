@@ -1,0 +1,21 @@
+HTTrack3.49-2 launched on Tue, 22 Oct 2019 15:47:42 at https://nephos.cssninja.io/home.html
+(winhttrack https://nephos.cssninja.io/home.html -O "/home/njnisarg/websites/nephos" -%v )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+15:50:05	Error: 	"Not Found" (404) at link https://nephos.cssninja.io/assets/js/img/loading.gif (from https://nephos.cssninja.io/assets/js/webuipopover/jquery.webui-popover.min.css)
+15:50:05	Error: 	"Not Found" (404) at link https://nephos.cssninja.io/assets/fonts/fontawesome-webfont.eot?v=4.6.3 (from https://nephos.cssninja.io/assets/css/icons.min.css)
+15:50:05	Error: 	"Not Found" (404) at link https://nephos.cssninja.io/assets/fonts/fontawesome-webfont.eot? (from https://nephos.cssninja.io/assets/css/icons.min.css)
+15:50:05	Warning: 	File not parsed, looks like binary: https://nephos.cssninja.io/assets/fonts/fontawesome-webfont.woff2?v=4.6.3
+15:50:05	Error: 	"Not Found" (404) at link https://nephos.cssninja.io/assets/fonts/fontawesome-webfont.woff?v=4.6.3 (from https://nephos.cssninja.io/assets/css/icons.min.css)
+15:50:05	Error: 	"Not Found" (404) at link https://nephos.cssninja.io/assets/fonts/fontawesome-webfont.ttf?v=4.6.3 (from https://nephos.cssninja.io/assets/css/icons.min.css)
+15:50:05	Error: 	"Not Found" (404) at link https://nephos.cssninja.io/assets/fonts/fontawesome-webfont.svg?v=4.6.3 (from https://nephos.cssninja.io/assets/css/icons.min.css)
+15:50:05	Error: 	"Not Found" (404) at link https://nephos.cssninja.io/categories.html (from https://nephos.cssninja.io/cart-empty.html)
+15:50:09	Error: 	"Not Found" (404) at link https://nephos.cssninja.io/assets/images/products/office10.jpg (from https://nephos.cssninja.io/products.html)
+15:50:28	Error: 	"Not Found" (404) at link https://nephos.cssninja.io/assets/images/avatars.elie.jpg (from https://nephos.cssninja.io/product.html)
+
+HTTrack Website Copier/3.49-2 mirror complete in 2 minutes 46 seconds : 164 links scanned, 154 files written (14964043 bytes overall) [12180272 bytes received at 73375 bytes/sec], 3382620 bytes transferred using HTTP compression in 43 files, ratio 16%, 32.8 requests per connection
+(9 errors, 1 warnings, 0 messages)
