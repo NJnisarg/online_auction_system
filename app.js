@@ -5,8 +5,12 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const app = express();
+const connSchema = require('./database/schema');
 
 const auctionRouter = require('./services/auction/routes/index');
+
+// Setting the database
+// connSchema.createSchema();
 
 // View engine
 app.set('view engine', 'jade');

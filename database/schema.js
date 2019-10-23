@@ -8,7 +8,7 @@ const { conn } = require('./connection');
 // Call this only once at the start
 const createSchema = () => {
     conn.query({
-            sql: 'call OnlineAuctionSchema()'
+            sql: 'call OnlineAuctionSchema();'
         },
         (error, results, fields) => {
             if(error){
@@ -21,6 +21,21 @@ const createSchema = () => {
             }
         }
     );
+
+    conn.query({
+        sql: 'call DbSeed();'
+    },
+    (error, results, fields) => {
+        if(error){
+            console.log(error);
+            return;
+        }
+
+        if(results){
+            console.log(results);
+        }
+    }
+);
 };
 
 module.exports = {

@@ -43,7 +43,7 @@ const createAuction = async(options) => {
         conn.query({
             sql: 'call CreateAuction(?,?,?,?,?,?,?,?)'
         },
-        [options.userId, options.title, options.description, options.imgUrl, options.startDate, options.endDate, options.category, options.startingBid],
+        [options.userId, options.title, options.description, options.imgUrl, options.startDate, options.endDate, options.categoryId, options.startingBid],
         (error, results, fields) => {
             if(error)
             {
@@ -54,12 +54,12 @@ const createAuction = async(options) => {
     })
 };
 
-const updateAuction = async() => {
+const updateAuction = async(options) => {
     return new Promise((resolve, reject) => {
         conn.query({
             sql: 'call UpdateAuction(?,?,?,?,?,?,?,?)'
         },
-        [options.auctionId, options.title, options.description, options.imgUrl, options.startDate, options.endDate, options.category, options.startingBid],
+        [options.auctionId, options.title, options.description, options.imgUrl, options.startDate, options.endDate, options.categoryId, options.startingBid],
         (error, results, fields) => {
             if(error)
             {
@@ -71,15 +71,32 @@ const updateAuction = async() => {
     })
 };
 
+const deleteAuction = async(options) => {
+    return new Promise((resolve, reject) => {
+        conn.query({
+            sql: 'call DeleteAuction(?)'
+        },
+        [options.auctionId],
+        (error, results, fields) => {
+            if(error)
+            {
+                reject( "Delete: Error deleting the data" + error);
+            }
+            resolve(results);
+        }
+        );
+    })
+};
+
 const getAuctionCategories = async() => {
     return new Promise((resolve, reject) => {
         conn.query({
-            sql: 'call GetAuctionCategory()'
+            sql: 'call GetAuctionCategories()'
         },
         (error, results, fields) => {
             if(error)
             {
-                reject( "GETAUCTIONCATEGORIES: Error updating the data" + error);
+                reject( "GETAUCTIONCATEGORIES: Error getting the data" + error);
             }
             resolve(results);
         }
