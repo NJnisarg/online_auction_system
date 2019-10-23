@@ -4,20 +4,18 @@ const getAllAuctions = async (options) => {
     let {createdByUserId, categoryId, status} = options;
     return new Promise((resolve,reject) => {
         conn.query({
-            sql: 'select * from Auction A inner join Product P on A.auctionId = P.auctionId where A.userId = coalesce(A.userId, ?) and categoryId = coalesce(P.categoryId, ?) and A.status = coalesce(A.status, ?)'
+            sql: 'call GetAllAuctions(?,?,?)'
         },
         [createdByUserId, categoryId, status],
         (error, results, fields) => {
             if(error)
             {
-                console.log(error);
                 reject("GETALLAUCTIONS: Error fetching the data");
             }
-            console.log(results);
             resolve(results);
         })
     })
-}
+};
 
 const getAuction = async (options) => {
     return new Promise((resolve,reject) => {
@@ -27,20 +25,18 @@ const getAuction = async (options) => {
             reject("GETAUCTION: AuctionId is null or undefined");
         
         conn.query({
-            sql: 'select * from Auction A inner join Product P on A.auctionId = P.productId where A.auctionId = ?',
+            sql: 'call GetAuction(?)',
         },
         [auctionId],
         (error, results, fields) => {
             if(error)
             {
-                console.log(error);
                 reject( "GETAUCTION: Error fetching the data" + error);
             }
-            console.log(results);
             resolve(results);
         });
     });
-}
+};
 
 const createAuction = async(options) => {
     return new Promise((resolve, reject) => {
@@ -51,14 +47,12 @@ const createAuction = async(options) => {
         (error, results, fields) => {
             if(error)
             {
-                console.log(error);
                 reject( "CREATEAUCTION: Error inserting the data" + error);
             }
-            console.log(results);
             resolve(results);
         });
     })
-}
+};
 
 const updateAuction = async() => {
     return new Promise((resolve, reject) => {
@@ -69,20 +63,53 @@ const updateAuction = async() => {
         (error, results, fields) => {
             if(error)
             {
-                console.log(error);
                 reject( "UPDATEAUCTION: Error updating the data" + error);
             }
-            console.log(results);
+            resolve(results);
+        }
+        );
+    })
+};
+
+const getAuctionCategories = async() => {
+    return new Promise((resolve, reject) => {
+        conn.query({
+            sql: 'call GetAuctionCategory()'
+        },
+        (error, results, fields) => {
+            if(error)
+            {
+                reject( "GETAUCTIONCATEGORIES: Error updating the data" + error);
+            }
             resolve(results);
         }
         );
     })
 }
 
+const bid = async(options) => {
+    return new Promise((resolve, reject) => {
+        conn.query({
+            sql: 'call Bid(?,?,?)'
+        },
+        [options.userId, options.auctionId, options.bidAmt],
+        (error, results, fields) => {
+            if(error)
+            {
+                reject( "BID: Error bidding on the auction" + error);
+            }
+            resolve(results);
+        }
+        );
+    });
+};
+
 module.exports = {
     getAllAuctions,
     getAuction,
     createAuction,
     updateAuction,
-    deleteAuction
+    deleteAuction,
+    getAuctionCategories,
+    bid
 }

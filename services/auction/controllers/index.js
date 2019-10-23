@@ -56,10 +56,34 @@ const deleteAuction = async (req, res) => {
     }
 };
 
+const getAuctionCategories = async (req,res) => {
+    try{
+        let result = await db.getAuctionCategories();
+        console.log(result);
+        response(res,null,"Successfully deleted the auction", result, 200);
+    }catch(err){
+        console.log(err);
+        response(res, err, "Error deleting the auction", null, 500);
+    }
+}
+
+const bid = async (req,res) => {
+    try{
+        let result = await db.bid(req.body);
+        console.log(result);
+        response(res,null,"Successfully carried out the bid", result, 200);
+    }catch(err){
+        console.log(err);
+        response(res, err, "Error. Could not bid", null, 500);
+    }
+}
+
 module.exports = {
     getAllAuctions, 
     getAuction,
     createAuction,
     updateAuction,
-    deleteAuction
+    deleteAuction,
+    getAuctionCategories,
+    bid
 }
