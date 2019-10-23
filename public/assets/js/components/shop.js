@@ -18,8 +18,6 @@ let getAuctionCategories = async () => {
 
 };
 
-
-
 let generateRightMenu = async () => {
 
     let categories = await getAuctionCategories();
