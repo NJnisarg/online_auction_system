@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from nephos.cssninja.io/shop.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Oct 2019 10:20:02 GMT -->
+<head>
+        <!-- Required meta tags always come first -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title> Nephos :: Modern Bulma Ecommerce App and Dashboard</title>
+        <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+        <!--Core CSS -->
+        <link rel="stylesheet" href="assets/css/bulma.css">
+        <link rel="stylesheet" href="assets/css/core.css">
+        
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,400" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500" rel="stylesheet">
+        
+        <!-- plugins -->
+        <link rel="stylesheet" href="assets/js/slick/slick.css">
+        <link rel="stylesheet" href="assets/js/slick/slick-theme.css">
+        <link rel="stylesheet" href="assets/js/webuipopover/jquery.webui-popover.min.css">
+        <link rel="stylesheet" href="assets/js/izitoast/css/iziToast.min.css">
+        <link rel="stylesheet" href="assets/js/zoom/zoom.css">
+        <link rel="stylesheet" href="assets/js/jpcard/card.css">
+        <link rel="stylesheet" href="assets/css/chosen/chosen.css">
+        <link rel="stylesheet" href="assets/css/icons.min.css">
+
+    </head>
+    <body>
+        
+        <!-- Pageloader -->
+        <div class="pageloader"></div>
+        <div class="infraloader is-active"></div>
+        <nav class="navbar mobile-navbar is-hidden-desktop is-hidden-tablet" aria-label="main navigation">
+            <!-- Brand -->
+            <div class="navbar-brand">
+                <a class="navbar-item" href="home.html">
+                    <img src="assets/images/logo/nephos.svg" alt="">
+                </a>
+        
+                <!-- Sidebar mode toggler icon -->
+                <a id="sidebar-mode" class="navbar-item is-icon is-sidebar-toggler" href="javascript:void(0);">
+                    <i data-feather="sidebar"></i>
+                </a>
+        
+                <!-- Mobile menu toggler icon -->
+                <div class="navbar-burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <!-- Navbar mobile menu -->
+            <div class="navbar-menu">
+                <!-- Account -->
+                <div class="navbar-item has-dropdown">
+                    <a class="navbar-link">
+                        <img src="assets/images/avatars/elie.jpg" alt=""> 
+                        <span class="is-heading">Elie Daniels</span> 
+                    </a>
+        
+                    <!-- Mobile Dropdown -->
+                    <div class="navbar-dropdown">
+                        <a href="cart.html" class="navbar-item is-flex">
+                            <span>Cart</span>
+                            <!-- Number of items in Cart -->
+                            <span class="menu-badge">3</span>
+                        </a>
+                        <a href="account.html" class="navbar-item">Account</a>
+                        <a href="wishlist.html" class="navbar-item">Wishlist</a>
+                        <a href="account-edit.html" class="navbar-item">Settings</a>
+                        <a href="authentication.html" class="navbar-item">Log out</a>
+                    </div>
+                </div>
+        
+                <!-- More -->
+                <div class="navbar-item has-dropdown">
+                    <a class="navbar-link">
+                        <i data-feather="grid"></i>
+                        <span class="is-heading">Categories</span>
+                    </a>
+        
+                    <!-- Mobile Dropdown -->
+                    <div class="navbar-dropdown">
+                        <a href="products.html" class="navbar-item">House</a>
+                        <a href="products.html" class="navbar-item">Office</a>
+                        <a href="products.html" class="navbar-item">Kids</a>
+                        <a href="products.html" class="navbar-item">Kitchen</a>
+                        <a href="products.html" class="navbar-item">Accessories</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Sidebar-->
+        <div class="main-sidebar">
+            <div class="sidebar-brand">
+                <a href="home.html"><img src="assets/images/logo/nephos.svg" alt=""></a>
+            </div>
+            <div class="sidebar-inner">
+                <ul class="icon-menu">
+                    <!-- Shop sidebar trigger -->
+                    <li>
+                        <a href="javascript:void(0);" id="open-shop"><i data-feather="home"></i></a>
+                    </li>            <!-- Cart sidebar trigger -->
+                    <li>
+                        <a href="javascript:void(0);" id="open-cart"><i data-feather="shopping-cart"></i></a>
+                    </li>            <!-- Search trigger -->
+                    <li>
+                        <a href="javascript:void(0);" id="open-search"><i data-feather="search"></i></a>
+                        <a href="javascript:void(0);" id="close-search" class="is-hidden is-inactive"><i data-feather="x"></i></a>
+                    </li>            <!-- Mobile mode trigger -->
+                    <li class="is-hidden-desktop is-hidden-tablet">
+                        <a href="javascript:void(0);" id="mobile-mode"><i data-feather="smartphone"></i></a>
+                    </li>        </ul>
+        
+                <!-- User account -->
+                <ul class="bottom-menu is-hidden-mobile">
+                    <li>
+                        <a href="authentication.html"><i data-feather="user"></i></a>
+                    </li>        </ul>
+            </div>
+        </div>
+        <!-- /Main Sidebar-->
+        
+        <!-- FAB -->
+        <div id="quickview-trigger"  class="menu-fab is-hidden-mobile">
+            <a class="hamburger-btn" href="javascript:void(0);">
+                <span class="menu-toggle">	
+                    <span class="icon-box-toggle"> 	
+                        <span class="rotate">
+                            <i class="icon-line-top"></i>
+                            <i class="icon-line-center"></i>
+                            <i class="icon-line-bottom"></i> 
+                        </span>
+                    </span>
+                </span>
+            </a>
+        </div><!-- /FAB -->
+        
+        <!-- Categories Right quickview -->
+        <div class="category-quickview">
+            <div class="inner">
+                <ul class="category-menu" id="rightCategoryMenu">
+
+                </ul>
+        
+                <!--div class="all-categories is-hidden-mobile">
+                    <a href="products.html">Show all categories</a>
+                    <div class="centered-divider"></div>
+                </div-->
+            </div>
+        </div>
+        
+        <!-- Shop quickview -->
+        <div class="shop-quickview has-background-image" data-background="assets/images/bg/sidebar.jpg">
+            <div class="inner">
+                <!-- Header -->
+                <div class="quickview-header">
+                    <h2>Nephos</h2>
+                    <span id="close-shop-sidebar"><i data-feather="x"></i></span>
+                </div>
+                <!-- Shop menu -->
+                <ul class="shop-menu">
+                    <li>
+                        <a href="shop.html">
+                            <span>Shop</span>
+                            <i data-feather="grid"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="account.html">
+                            <span>My Account</span>
+                            <i data-feather="user"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="orders.html">
+                            <span>My Orders</span>
+                            <i data-feather="credit-card"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="wishlist.html">
+                            <span>My Wishlists</span>
+                            <i data-feather="heart"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Profile image -->
+                <ul class="user-profile">
+                    <li>
+                        <a href="account.html">
+                            <img src="assets/images/avatars/altvatar.png" alt="">
+                            <span class="user">
+                                <span>Guest</span>
+                                <span>0 <small>Items in Cart</small></span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Cart quickview -->
+        <div class="cart-quickview">
+            <div class="inner">
+                <!-- Header -->
+                <div class="quickview-header">
+                    <h2>Quick Cart</h2>
+                    <span id="close-cart-sidebar"><i data-feather="x"></i></span>
+                </div>
+                <!-- Cart quickview body -->
+                <div class="cart-body">
+                    <div class="empty-cart has-text-centered">
+                        <h3>Your cart is empty</h3>
+                        <img src="assets/images/icons/new-cart.svg" alt="">
+                        <a href="shop.html" class="button big-button rounded">Start Shopping</a>
+                        <small>You can create your account later</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main wrapper -->
+        <div class="shop-wrapper">
+        
+            <!-- Search overlay -->
+            <div class="search-overlay"></div>
+            
+            <!-- Search input -->
+            <div class="search-input-wrapper is-desktop is-hidden">
+                <div class="field">
+                    <div class="control">
+                        <input type="text" name="search" autofocus required>
+                        <span id="clear-search" role="button"><i data-feather="x"></i></span>
+                        <span class="search-help">Type the name of the product you are looking for</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Main section -->
+            <div class="section">
+                <!-- Container -->
+                <div class="container">
+        
+                    <!-- Product Categories Grid -->
+                    <div class="columns category-header">
+                        <div class="column is-10 is-offset-1 is-tablet-landscape-padded">
+                            <!-- Title -->
+                            <div class="category-title no-border is-padded">
+                                <h2>SHOP</h2>
+                                <img class="brand-filigrane" src="assets/images/logo/nephos-greyscale.svg" alt="">
+                            </div>
+
+                            <div class="is-categories-grid">
+                                <!-- Tile Grid -->
+                                <div class="tile is-ancestor is-vertical" id="centerCategoriesTile">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div> 
+                    <!-- /House products -->
+        
+                </div>
+                <!-- /Container -->
+            </div>
+            <!-- /Main section -->
+        </div>
+        <!-- /Main wrapper -->
+        <!-- Concatenated plugins -->
+        <script src="assets/js/app.js"></script>
+        <!-- Helios js -->
+        <script src="assets/js/nephos.js"></script>
+        <script src="assets/js/components/shop.js" type="module" crossorigin></script>
+        </body>  
+
+<!-- Mirrored from nephos.cssninja.io/shop.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Oct 2019 10:20:02 GMT -->
+</html>
