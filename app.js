@@ -8,6 +8,7 @@ const app = express();
 const connSchema = require('./database/schema');
 
 const auctionRouter = require('./services/auction/routes/index');
+const authRouter = require('./services/auth/routes/index');
 
 // Setting the database
 // connSchema.createSchema();
@@ -21,6 +22,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 
 app.use('/auction', auctionRouter);
+app.use('/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
