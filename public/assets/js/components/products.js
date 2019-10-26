@@ -97,7 +97,7 @@ let generateProductContainer = async (categoryId,categoryName) => {
 
     let products = '';
     auctions.map((elem,index) => {
-        products += '<div class="column is-6">\n' +
+        products += ('<a href="product-carousel.html?auctionId=' + elem.auctionId + '"><div class="column is-6" id="' + elem.auctionId + '">\n' +
             '                                    <div class="flat-card is-long">\n' +
             '                                        <div class="left-image is-md">\n' +
             '                                            <img src="assets/images/products/house2.jpg" alt="">\n' +
@@ -115,7 +115,7 @@ let generateProductContainer = async (categoryId,categoryName) => {
             '                                            <div class="like"><i data-feather="heart" class="has-simple-popover" data-content="Add to Wishlist" data-placement="top"></i></div>\n' +
             '                                        </div>\n' +
             '                                    </div>\n' +
-            '                                </div>';
+            '                                </div></a>');
     });
 
     let productContainer = '<div class="columns category-header">\n' +
@@ -175,7 +175,8 @@ let generateProductContainer = async (categoryId,categoryName) => {
         '                            <!-- /Controls -->\n' +
         '        \n' +
         '                            <!-- Product grid -->\n' +
-        '                            <div class="columns is-product-grid is-multiline">\n' + products +                                                                           +
+        '                            <div class="columns is-product-grid is-multiline">\n' +
+                                    products +
         '                            </div>\n' +
         '                            <!-- /Product grid -->\n' +
         '        \n' +
@@ -198,6 +199,5 @@ $(document).ready(() => {
     }).catch(err => {
         console.log(err);
     });
-
 
 });
