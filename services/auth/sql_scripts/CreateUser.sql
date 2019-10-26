@@ -5,5 +5,7 @@ begin
     insert into User(username, emailId, password) values (arg_username, arg_emailId, arg_hash);
     set arg_userId = (select userId from User where username = arg_username and emailId = arg_emailId);
 
+    insert into Profile(userId) values (arg_userId);
+
     select * from User where userId = arg_userId;
 end
