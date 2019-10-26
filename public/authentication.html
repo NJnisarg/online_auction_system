@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<!-- Mirrored from nephos.cssninja.io/authentication.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Oct 2019 10:18:39 GMT -->
+
 <head>
         <!-- Required meta tags always come first -->
         <meta charset="utf-8">
@@ -108,10 +107,6 @@
                     </li>            <!-- Cart sidebar trigger -->
                     <li>
                         <a href="javascript:void(0);" id="open-cart"><i data-feather="shopping-cart"></i></a>
-                    </li>            <!-- Search trigger -->
-                    <li>
-                        <a href="javascript:void(0);" id="open-search"><i data-feather="search"></i></a>
-                        <a href="javascript:void(0);" id="close-search" class="is-hidden is-inactive"><i data-feather="x"></i></a>
                     </li>            <!-- Mobile mode trigger -->
                     <li class="is-hidden-desktop is-hidden-tablet">
                         <a href="javascript:void(0);" id="mobile-mode"><i data-feather="smartphone"></i></a>
@@ -787,20 +782,7 @@
         </div>
         <!-- Main wrapper -->
         <div class="shop-wrapper">
-        
-            <!-- Search overlay -->
-            <div class="search-overlay"></div>
-            
-            <!-- Search input -->
-            <div class="search-input-wrapper is-desktop is-hidden">
-                <div class="field">
-                    <div class="control">
-                        <input type="text" name="search" autofocus required>
-                        <span id="clear-search" role="button"><i data-feather="x"></i></span>
-                        <span class="search-help">Type the name of the product you are looking for</span>
-                    </div>
-                </div>
-            </div>
+
             <!-- Main section -->
             <div class="section">
                 <!-- Container -->
@@ -844,16 +826,16 @@
                                             </div>
                                             <!-- Login form -->
                                             <div id="login" class="navtab-content is-active">
-                                                <form>
+                                                <div>
                                                     <!-- Form Control -->
                                                     <div class="control">
-                                                        <label class="auth-label">Email*</label>
-                                                        <input type="email" class="input" placeholder="">
+                                                        <label class="auth-label" for="login-email">Email*</label>
+                                                        <input id="login-email" type="email" class="input" placeholder="">
                                                     </div>
                                                     <!-- Form Control -->
                                                     <div class="control">
-                                                        <label class="auth-label">Password*</label>
-                                                        <input type="password" class="input" placeholder="">
+                                                        <label class="auth-label" for="login-password">Password*</label>
+                                                        <input id="login-password" type="password" class="input" placeholder="">
                                                     </div>
                                                     <!-- Form Control -->
                                                     <div class="control">
@@ -864,34 +846,39 @@
                                                         </label>
                                                     </div>
                                                     <!-- Form Submit -->
-                                                    <div class="button-wrapper">
-                                                        <button type="submit" class="button feather-button is-small primary-button upper-button raised">
+                                                    <div id="login-submit" class="button-wrapper">
+                                                        <button class="button feather-button is-small primary-button upper-button raised">
                                                             <span>Login</span>
                                                         </button>
                                                         <a class="forgotten">Forgot Password ?</a>
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
                                             <!-- Register form -->
                                             <div id="register" class="navtab-content">
                                                 <form>
                                                     <!-- Form Control -->
                                                     <div class="control">
-                                                        <label class="auth-label">Email*</label>
-                                                        <input type="email" class="input" placeholder="">
+                                                        <label class="auth-label" for="register-username">Username*</label>
+                                                        <input id="register-username" type="text" class="input" placeholder="">
                                                     </div>
                                                     <!-- Form Control -->
                                                     <div class="control">
-                                                        <label class="auth-label">Password*</label>
-                                                        <input type="password" class="input" placeholder="">
+                                                        <label class="auth-label" for="register-email">Email*</label>
+                                                        <input id="register-email" type="email" class="input" placeholder="">
                                                     </div>
                                                     <!-- Form Control -->
                                                     <div class="control">
-                                                        <label class="auth-label">Confirm Password*</label>
-                                                        <input type="password" class="input" placeholder="">
+                                                        <label class="auth-label" for="register-password">Password*</label>
+                                                        <input id="register-password" type="password" class="input" placeholder="">
+                                                    </div>
+                                                    <!-- Form Control -->
+                                                    <div class="control">
+                                                        <label class="auth-label" for="register-confirm">Confirm Password*</label>
+                                                        <input id="register-confirm" type="password" class="input" placeholder="">
                                                     </div>
                                                     <!-- Form Submit -->
-                                                    <div class="button-wrapper">
+                                                    <div id="register-submit" class="button-wrapper">
                                                         <button type="submit" class="button feather-button is-small primary-button upper-button raised">
                                                             <span>Register</span>
                                                         </button>
@@ -916,7 +903,10 @@
         <!-- Concatenated plugins -->
         <script src="assets/js/app.js"></script>
         <!-- Helios js -->
-        <script src="assets/js/nephos.js"></script>    </body>  
+        <script src="assets/js/nephos.js"></script>
 
-<!-- Mirrored from nephos.cssninja.io/authentication.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Oct 2019 10:18:40 GMT -->
+        <script src="assets/js/components/authentication.js" type="module" crossorigin></script>
+
+    </body>
+
 </html>
