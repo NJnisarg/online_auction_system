@@ -21,7 +21,7 @@ const getAuction = async (options) => {
     return new Promise((resolve,reject) => {
 
         let {auctionId} = options;
-        if(auctionId==undefined || auctionId==null)
+        if(auctionId===undefined || auctionId===null)
             reject("GETAUCTION: AuctionId is null or undefined");
         
         conn.query({
