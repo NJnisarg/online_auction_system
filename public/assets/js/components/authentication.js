@@ -74,6 +74,7 @@ const login = async () => {
             localStorage.removeItem("userData");
             localStorage.setItem("userData", JSON.stringify(localData));
             alert(message);
+            window.location = "index.html";
         }
         else if(message === "Passwords do not match" && error===null) {
             alert("Password is Incorrect, Please try again");
@@ -117,7 +118,8 @@ const register = async () => {
             };
             localStorage.removeItem("userData");
             localStorage.setItem("userData", JSON.stringify(localData));
-            alert(message);
+            alert(response.message);
+            window.location = "home.html";
         }
     }
 
@@ -129,4 +131,11 @@ $('#login-submit').click(function () {
 
 $('#register-submit').click(function () {
     register();
+});
+
+$(document).ready(() => {
+    if(localStorage.getItem("userData") !== null && localStorage.getItem("userData") !== undefined)
+    {
+        window.location = "home.html";
+    }
 });

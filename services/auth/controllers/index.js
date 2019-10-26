@@ -21,7 +21,7 @@ const authenticateUser = async (req, res) => {
                 'userId':user.userId,
                 'username':user.username,
                 'emailId':user.emailId,
-                'token': jwt.sign({id: user.userId}, authConfig.jwtSecret, {expiresIn: 86400})
+                'token': user.userId
             };
             response(res, null, "User Authenticated Successfully", finalRes, 200);
         }
@@ -49,7 +49,8 @@ const registerUser = async (req, res) => {
         let user = result[0][0];
 
         console.log(user);
-        let token = jwt.sign({id: user.userId}, authConfig.jwtSecret, {expiresIn: 86400});
+        // let token = jwt.sign({id: user.userId}, authConfig.jwtSecret, {expiresIn: 86400});
+        let token = user.userId;
 
         response(res, null,"User Created Successfully", {'userId':user.userId, 'username':user.username, 'emailId':user.emailId, 'token': token}, 201);
     }catch(err){
@@ -60,7 +61,7 @@ const registerUser = async (req, res) => {
 
 const getProfile = async (req, res) => {
     try{
-        let result = await db.getProfile(req.body);
+        let result = await db.getProfile(req.query);
         console.log(result);
         response(res, null, "Profile fetched Successfully", result[0], 200);
     }catch (err) {

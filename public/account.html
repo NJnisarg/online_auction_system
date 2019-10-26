@@ -108,20 +108,18 @@
                     </li>            <!-- Cart sidebar trigger -->
                     <li>
                         <a href="javascript:void(0);" id="open-cart"><i data-feather="shopping-cart"></i><span class="cart-items"></span></a>
-                    </li>            <!-- Search trigger -->
-                    <li>
-                        <a href="javascript:void(0);" id="open-search"><i data-feather="search"></i></a>
-                        <a href="javascript:void(0);" id="close-search" class="is-hidden is-inactive"><i data-feather="x"></i></a>
                     </li>            <!-- Mobile mode trigger -->
                     <li class="is-hidden-desktop is-hidden-tablet">
                         <a href="javascript:void(0);" id="mobile-mode"><i data-feather="smartphone"></i></a>
-                    </li>        </ul>
+                    </li>
+                </ul>
         
                 <!-- User account -->
                 <ul class="bottom-menu is-hidden-mobile">
                     <li>
                         <a href="authentication.html"><i data-feather="log-out"></i></a>
-                    </li>        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
         <!-- /Main Sidebar-->
@@ -838,20 +836,6 @@
         
         <!-- Main wrapper -->
         <div class="shop-wrapper">
-        
-            <!-- Search overlay -->
-            <div class="search-overlay"></div>
-            
-            <!-- Search input -->
-            <div class="search-input-wrapper is-desktop is-hidden">
-                <div class="field">
-                    <div class="control">
-                        <input type="text" name="search" autofocus required>
-                        <span id="clear-search" role="button"><i data-feather="x"></i></span>
-                        <span class="search-help">Type the name of the product you are looking for</span>
-                    </div>
-                </div>
-            </div>
             <!-- Main section -->
             <div class="section">
                 <!-- Container -->
@@ -877,124 +861,9 @@
                             </div>
         
                             <!-- Account layout -->
-                            <div class="columns is-account-grid is-multiline">
-        
-                                <div class="column is-5">
-                                    <!-- User card -->
-                                    <div class="flat-card profile-card is-auto">
-                                        <div class="card-body">
-                                            <div class="profile-image">
-                                                <img src="assets/images/avatars/elie.jpg" alt="">
-                                            </div>
-                                            <div class="username has-text-centered">
-                                                <span>Elie Daniels</span>
-                                                <small>Member since Sep 23 2017</small>
-                                            </div>
-                                        </div>
-                                        <div class="profile-footer has-text-centered">
-                                            <span class="achievement-title">Next Achievement</span>
-                                            <div class="count">
-                                                24/150
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                                <!-- Details -->
-                                <div class="column is-7">
-                                    <div class="flat-card profile-info-card is-auto">
-                                        <!-- Title -->
-                                        <div class="card-title">
-                                            <h3>Account details</h3>
-        
-                                            <div class="edit-account has-simple-popover popover-hidden-mobile" data-content="Edit Account" data-placement="top">
-                                                <a href="account-edit.html"><i class="feather-icons" data-feather="settings"></i></a>
-                                            </div>
-                                        </div>
-                                        <!-- Contact Info -->
-                                        <div class="card-body">
-                                            <div class="columns">
-                                                <div class="column is-6">
-                                                    <div class="info-block">
-                                                        <span class="label-text">First Name</span>
-                                                        <span class="label-value">Elie</span>
-                                                    </div>
-        
-                                                    <div class="info-block">
-                                                        <span class="label-text">Email</span>
-                                                        <span class="label-value">eliedaniels@gmail.com</span>
-                                                    </div>
-                                                </div>
-        
-                                                <div class="column is-6">
-                                                    <div class="info-block">
-                                                        <span class="label-text">Last Name</span>
-                                                        <span class="label-value">Daniels</span>
-                                                    </div>
-        
-                                                    <div class="info-block">
-                                                        <span class="label-text">Phone</span>
-                                                        <span class="label-value">+1 555 623 568</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Background Nephos Icon -->
-                                        <img class="card-bg" src="assets/images/logo/nephos-greyscale.svg" alt="">
-                                    </div>
-        
-                                    <!-- Address Info -->
-                                    <div class="flat-card profile-info-card is-auto">
-                                        <!-- Title -->
-                                        <div class="card-title">
-                                            <h3>Billing address</h3>
-                                            <!-- Cog Button -->
-                                            <div class="edit-account is-vhidden">
-                                                <a href="account-edit.html"><i class="feather-icons" data-feather="settings"></i></a>
-                                            </div>
-        
-                                        </div>
-                                        <!-- Billing Address -->
-                                        <div class="card-body">
-                                            <div class="columns">
-                                                <div class="column is-6">
-                                                    <div class="info-block">
-                                                        <span class="label-text">Number</span>
-                                                        <span class="label-value">23, Block C2</span>
-                                                    </div>
-        
-                                                    <div class="info-block">
-                                                        <span class="label-text">City</span>
-                                                        <span class="label-value">Los Angeles</span>
-                                                    </div>
-        
-                                                    <div class="info-block">
-                                                        <span class="label-text">State</span>
-                                                        <span class="label-value">CA</span>
-                                                    </div>
-                                                </div>
-        
-                                                <div class="column is-6">
-                                                    <div class="info-block">
-                                                        <span class="label-text">Street</span>
-                                                        <span class="label-value">Church Street</span>
-                                                    </div>
-        
-                                                    <div class="info-block">
-                                                        <span class="label-text">Postal Code</span>
-                                                        <span class="label-value">100065</span>
-                                                    </div>
-        
-                                                    <div class="info-block">
-                                                        <span class="label-text">Country</span>
-                                                        <span class="label-value">United States</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- /Address Form -->
-                                    </div>
-                                </div>
+                            <div id="account-details" class="columns is-account-grid is-multiline">
+
+
                             </div>
                         </div>
                     </div>
@@ -1007,7 +876,9 @@
         <!-- Concatenated plugins -->
         <script src="assets/js/app.js"></script>
         <!-- Helios js -->
-        <script src="assets/js/nephos.js"></script>    </body>  
+        <script src="assets/js/nephos.js"></script>
 
-<!-- Mirrored from nephos.cssninja.io/account.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Oct 2019 10:18:33 GMT -->
+        <script src="assets/js/components/account.js" type="module" crossorigin></script>
+    </body>
+
 </html>
