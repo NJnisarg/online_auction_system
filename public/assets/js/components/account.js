@@ -24,6 +24,8 @@ const getUserProfile = async () => {
 };
 
 let viewProfile = profile => {
+    let first_name = profile[0].name;
+    let last_name = profile[0].name;
     let profileDetails = '<div class="column is-5">\n' +
         '        <!-- User card -->\n' +
         '        <div class="flat-card profile-card is-auto">\n' +
@@ -37,9 +39,9 @@ let viewProfile = profile => {
         '                </div>\n' +
         '            </div>\n' +
         '            <div class="profile-footer has-text-centered">\n' +
-        '                <span class="achievement-title">Next Achievement</span>\n' +
+        '                <span class="achievement-title">Wallet</span>\n' +
         '                <div class="count">\n' +
-        '                    24/150\n' +
+        '                    &#8377 500,000\n' +
         '                </div>\n' +
         '            </div>\n' +
         '        </div>\n' +
@@ -63,24 +65,34 @@ let viewProfile = profile => {
         '                    <div class="column is-6">\n' +
         '                        <div class="info-block">\n' +
         '                            <span class="label-text">First Name</span>\n' +
-        '                            <span class="label-value">Elie</span>\n' +
+        '                            <span class="label-value">' + first_name + '</span>\n' +
         '                        </div>\n' +
         '\n' +
         '                        <div class="info-block">\n' +
         '                            <span class="label-text">Email</span>\n' +
-        '                            <span class="label-value">eliedaniels@gmail.com</span>\n' +
+        '                            <span class="label-value">' + profile[0].emailId + '</span>\n' +
+        '                        </div>\n' +
+        '\n' +
+        '                        <div class="info-block">\n' +
+        '                            <span class="label-text">Sex</span>\n' +
+        '                            <span class="label-value">' + profile[0].sex + '</span>\n' +
         '                        </div>\n' +
         '                    </div>\n' +
         '\n' +
         '                    <div class="column is-6">\n' +
         '                        <div class="info-block">\n' +
         '                            <span class="label-text">Last Name</span>\n' +
-        '                            <span class="label-value">Daniels</span>\n' +
+        '                            <span class="label-value">' + last_name + '</span>\n' +
         '                        </div>\n' +
         '\n' +
         '                        <div class="info-block">\n' +
         '                            <span class="label-text">Phone</span>\n' +
         '                            <span class="label-value">+1 555 623 568</span>\n' +
+        '                        </div>\n' +
+        '\n' +
+        '                        <div class="info-block">\n' +
+        '                            <span class="label-text">Date of Birth</span>\n' +
+        '                            <span class="label-value">' + profile[0].dob + '</span>\n' +
         '                        </div>\n' +
         '                    </div>\n' +
         '                </div>\n' +
@@ -110,11 +122,6 @@ let viewProfile = profile => {
         '                        </div>\n' +
         '\n' +
         '                        <div class="info-block">\n' +
-        '                            <span class="label-text">City</span>\n' +
-        '                            <span class="label-value">Los Angeles</span>\n' +
-        '                        </div>\n' +
-        '\n' +
-        '                        <div class="info-block">\n' +
         '                            <span class="label-text">State</span>\n' +
         '                            <span class="label-value">CA</span>\n' +
         '                        </div>\n' +
@@ -124,11 +131,6 @@ let viewProfile = profile => {
         '                        <div class="info-block">\n' +
         '                            <span class="label-text">Street</span>\n' +
         '                            <span class="label-value">Church Street</span>\n' +
-        '                        </div>\n' +
-        '\n' +
-        '                        <div class="info-block">\n' +
-        '                            <span class="label-text">Postal Code</span>\n' +
-        '                            <span class="label-value">100065</span>\n' +
         '                        </div>\n' +
         '\n' +
         '                        <div class="info-block">\n' +
@@ -146,6 +148,10 @@ let viewProfile = profile => {
 };
 
 $(document).ready(() => {
+
+    if(localStorage.getItem('userData') === undefined || localStorage.getItem('userData') === null) {
+        window.location = "authentication.html";
+    }
 
     getUserProfile().then((profile) => {
         console.log(profile);
