@@ -65,7 +65,7 @@ const getAuctionCategories = async (req,res) => {
         console.log(err);
         response(res, err, "Error fetching the categories for the auctions", null, 500);
     }
-}
+};
 
 const bid = async (req,res) => {
     try{
@@ -76,7 +76,7 @@ const bid = async (req,res) => {
         console.log(err);
         response(res, err, "Error. Could not bid", null, 500);
     }
-}
+};
 
 module.exports = {
     getAllAuctions, 
@@ -86,4 +86,4 @@ module.exports = {
     deleteAuction,
     getAuctionCategories,
     bid
-}
+};

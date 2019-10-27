@@ -9,6 +9,6 @@ router.post('/createAuction', AuthorizationMiddleware, controllers.createAuction
 router.put('/updateAuction', AuthorizationMiddleware, controllers.updateAuction);
 router.delete('/deleteAuction', AuthorizationMiddleware, controllers.deleteAuction);
 router.get('/getAuctionCategories', controllers.getAuctionCategories);
-router.post('/bid', controllers.bid);
+router.post('/bid', AuthorizationMiddleware, controllers.bid);
 
 module.exports = router;

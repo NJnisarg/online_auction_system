@@ -35,6 +35,47 @@ let getAuctionDetails = async (auctionId) => {
     }
 };
 
+let bid = async(auctionId, bidAmt) => {
+
+    let userData = localStorage.getItem("userData");
+    userData = JSON.parse(userData);
+
+    let data = {
+        'auctionId': auctionId,
+        'bidAmt': bidAmt
+    };
+
+    let options = {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'token ' + userData.token
+        },
+        method: 'POST',
+        body: JSON.stringify(data)
+    };
+
+    try {
+        let response = await fetch(baseUrl + '/auction/bid', options);
+        let jsonResponse = await response.json();
+        if(response.ok)
+        {
+            return true;
+        }
+        else{
+            iziToast.show({
+                title: 'Error',
+                message: jsonResponse.message,
+                titleColor: 'Red',
+                backgroundColor: 'yellow'
+            });
+        }
+    }
+    catch (err) {
+        console.log(err);
+        return err;
+    }
+};
+
 let generateRightMenu = async () => {
 
     let categories = await getAuctionCategories();
@@ -89,8 +130,12 @@ let generateRightMenu = async () => {
     });
 };
 
-let generateProductDetails = async(auctionId) => {
-    let auction = await getAuctionDetails(auctionId);
+let generateProductDetails = async(auctionId, auction) => {
+    auction = await getAuctionDetails(auctionId);
+
+    if(auction.length === 0)
+        return null;
+
     console.log(auction[0]);
     auction = auction[0];
 
@@ -98,7 +143,10 @@ let generateProductDetails = async(auctionId) => {
     $('#categoryTitle').text(auction.categoryName);
     $('#numBids').text("Bids: " + auction.numBids);
     $('#productDescription').text(auction.description);
+    $('#modalProductDescription').text(auction.description);
     $('#currentBid').text(auction.currentBid);
+
+    return auction;
 
 };
 
@@ -109,12 +157,77 @@ $(document).ready(() => {
     let winUrl = window.location.href;
     let auctionId = winUrl.split('?auctionId=')[1];
 
-    generateProductDetails(auctionId);
+    generateProductDetails(auctionId).then(auction => {
+        if(auction===null)
+            window.location = 'products.html';
+
+        $('#bid').click(() => {
+            $('#bidModal').toggleClass('is-active',true);
+        });
+
+        $('#cancelBid').click(() => {
+            $('#bidModal').toggleClass('is-active',false);
+        });
+
+        $('#confirmBid').click(() => {
+
+            let userData = localStorage.getItem("userData");
+            if(userData===null || userData===undefined)
+            {
+                iziToast.show({
+                    title: 'Error',
+                    message: 'Please Login first to Bid!',
+                    titleColor: 'black',
+                    backgroundColor: 'green'
+                });
+
+                return;
+            }
+
+            let bidVal = $('#bidAmt').val();
+            console.log(bidVal);
+
+            if(bidVal <= auction.currentBid)
+            {
+                iziToast.show({
+                    title: 'Error',
+                    message: 'The Current Bid value is higher than your Bid. Please raise the Bid',
+                    titleColor: 'Red',
+                    backgroundColor: 'yellow'
+                });
+            }
+
+            else{
+                bid(auctionId, parseInt(bidVal)).then(done => {
+                    if(done)
+                    {
+                        iziToast.show({
+                            title: 'Success!',
+                            message: 'Successfully Placed Bid on the Product',
+                            titleColor: 'Blue',
+                            backgroundColor: 'yellow'
+                        });
+                        $('#bidModal').toggleClass('is-active',false);
+                        generateProductDetails(auctionId);
+
+                    }
+                }).catch(err => {
+                    iziToast.show({
+                        title: 'Error',
+                        message: err,
+                        titleColor: 'Red',
+                        backgroundColor: 'yellow'
+                    });
+                });
+            }
+
+        });
+
+    }).catch(err => {
+        console.log(err);
+        window.location = 'products.html';
+    });
+
+
 
 });
-
-productTitle
-categoryTitle
-numBids
-productDescription
-currentBid

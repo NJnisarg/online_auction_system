@@ -102,7 +102,7 @@ const getAuctionCategories = async() => {
         }
         );
     })
-}
+};
 
 const bid = async(options) => {
     return new Promise((resolve, reject) => {

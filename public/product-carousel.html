@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-        <title> Nephos :: Modern Bulma Ecommerce App and Dashboard</title>
+        <title>Nephos :: The Global Auction platform</title>
         <link rel="icon" type="image/png" href="assets/images/favicon.png" />
 
         <!--Core CSS -->
@@ -54,46 +54,7 @@
                     <span></span>
                 </div>
             </div>
-            <!-- Navbar mobile menu -->
-            <div class="navbar-menu">
-                <!-- Account -->
-                <div class="navbar-item has-dropdown">
-                    <a class="navbar-link">
-                        <img src="assets/images/avatars/elie.jpg" alt=""> 
-                        <span class="is-heading">Elie Daniels</span> 
-                    </a>
-        
-                    <!-- Mobile Dropdown -->
-                    <div class="navbar-dropdown">
-                        <a href="cart.html" class="navbar-item is-flex">
-                            <span>Cart</span>
-                            <!-- Number of items in Cart -->
-                            <span class="menu-badge">3</span>
-                        </a>
-                        <a href="account.html" class="navbar-item">Account</a>
-                        <a href="wishlist.html" class="navbar-item">Wishlist</a>
-                        <a href="account-edit.html" class="navbar-item">Settings</a>
-                        <a href="authentication.html" class="navbar-item">Log out</a>
-                    </div>
-                </div>
-        
-                <!-- More -->
-                <div class="navbar-item has-dropdown">
-                    <a class="navbar-link">
-                        <i data-feather="grid"></i>
-                        <span class="is-heading">Categories</span>
-                    </a>
-        
-                    <!-- Mobile Dropdown -->
-                    <div class="navbar-dropdown">
-                        <a href="products.html" class="navbar-item">House</a>
-                        <a href="products.html" class="navbar-item">Office</a>
-                        <a href="products.html" class="navbar-item">Kids</a>
-                        <a href="products.html" class="navbar-item">Kitchen</a>
-                        <a href="products.html" class="navbar-item">Accessories</a>
-                    </div>
-                </div>
-            </div>
+
         </nav>
         <!-- Main Sidebar-->
         <div class="main-sidebar">
@@ -107,24 +68,20 @@
                         <a href="javascript:void(0);" id="open-shop"><i data-feather="home"></i></a>
                     </li>            <!-- Cart sidebar trigger -->
                     <li>
-                        <a href="javascript:void(0);" id="open-cart"><i data-feather="shopping-cart"></i><span class="cart-items"></span></a>
-                    </li>            <!-- Search trigger -->
-                    <li>
-                        <a href="javascript:void(0);" id="open-search"><i data-feather="search"></i></a>
-                        <a href="javascript:void(0);" id="close-search" class="is-hidden is-inactive"><i data-feather="x"></i></a>
-                    </li>            <!-- Add to Wishlist -->
-                    <li>
-                        <a class="sidebar-whishlist" href="javascript:void(0)"><i data-feather="heart"></i></a>
-                    </li>            <!-- Mobile mode trigger -->
+                        <a href="javascript:void(0);" id="open-cart"><i data-feather="shopping-cart"></i></a>
+                    </li>
+                    <!-- Mobile mode trigger -->
                     <li class="is-hidden-desktop is-hidden-tablet">
                         <a href="javascript:void(0);" id="mobile-mode"><i data-feather="smartphone"></i></a>
-                    </li>        </ul>
+                    </li>
+                </ul>
         
                 <!-- User account -->
                 <ul class="bottom-menu is-hidden-mobile">
                     <li>
                         <a href="authentication.html"><i data-feather="log-out"></i></a>
-                    </li>        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
         <!-- /Main Sidebar-->
@@ -188,7 +145,7 @@
                     </li>
                     <li>
                         <a href="wishlist.html">
-                            <span>My Wishlists</span>
+                            <span>My Auctions</span>
                             <i data-feather="heart"></i>
                         </a>
                     </li>
@@ -197,10 +154,10 @@
                 <ul class="user-profile">
                     <li>
                         <a href="account.html">
-                            <img src="assets/images/avatars/elie.jpg" alt="">
+                            <img src="assets/images/avatars/altvatar.png" alt="">
                             <span class="user">
-                                <span>ELie Daniels</span>
-                                <span>0 <small>Orders</small></span>
+                                <span>Guest</span>
+                                <span>0 <small>Items I have Bidded</small></span>
                             </span>
                         </a>
                     </li>
@@ -212,247 +169,76 @@
             <div class="inner">
                 <!-- Header -->
                 <div class="quickview-header">
-                    <h2>Quick Cart</h2>
+                    <h2>Current Bids</h2>
                     <span id="close-cart-sidebar"><i data-feather="x"></i></span>
-                </div>
-                <!-- Total and checkout -->
-                <div class="cart-action">
-                    <span class="cart-total">
-                        <small>$</small>176,47
-                    </span>
-                    <a href="cart.html" class="button primary-button upper-button raised is-bold">
-                        <span>Open Cart</span>
-                    </a>
                 </div>
                 <!-- Cart quickview body -->
                 <div class="cart-body">
-                    <ul class="shopping-cart-items">
-                        <!-- Item -->
-                        <li class="clearfix">
-                            <img src="assets/images/products/office5.jpg" alt="" />
-                            <span class="item-meta">
-                                <span class="item-name">Cosy Chair</span>
-                                <span class="item-price">$88,00</span>
-                            </span>
-                            <span class="quantity">
-                                <input class="input is-rounded" type="number" value="1">
-                            </span>
-        
-                            <span class="remove-item">
-                                <i data-feather="x" class="has-simple-popover" data-content="Remove from Cart" data-placement="top"></i>
-                            </span>
-                        </li>
-                        <!-- Item -->
-                        <li class="clearfix">
-                            <img src="assets/images/products/cosy-red-seat.png" alt="" />
-                            <span class="item-meta">
-                                <span class="item-name">Red Seat</span>
-                                <span class="item-price">$45,00</span>
-                            </span>
-                            <span class="quantity">
-                                <input class="input is-rounded" type="number" value="1">
-                            </span>
-        
-                            <span class="remove-item">
-                                <i data-feather="x" class="has-simple-popover" data-content="Remove from Cart" data-placement="top"></i>
-                            </span>
-                        </li>
-                        <!-- Item -->
-                        <li class="clearfix">
-                            <img src="assets/images/products/kids2.jpg" alt="" />
-                            <span class="item-meta">
-                                <span class="item-name">Rabbit Lamp</span>
-                                <span class="item-price">$43,47</span>
-                            </span>
-                            <span class="quantity">
-                                <input class="input is-rounded" type="number" value="3">
-                            </span>
-        
-                            <span class="remove-item">
-                                <i data-feather="x" class="has-simple-popover" data-content="Remove from Cart" data-placement="top"></i>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Filters quickview -->
-        <div class="filters-quickview">
-            <div class="inner">
-                <!-- Header -->
-                <div class="quickview-header">
-                    <h2>Filters</h2>
-                    <span id="close-filters-sidebar"><i data-feather="x"></i></span>
-                </div>
-        
-                <!-- Filters body -->
-                <div class="filters-body">
-                    
-        
-                    <!-- Categories checkboxes -->
-                    <div class="filter-block">
-                        <h3 class="filter-title has-padding">Categories</h3>
-                        <div class="columns is-checkboxes is-gapless is-multiline">
-                            <!-- Checkbox -->
-                            <div class="column is-6">
-                                <div class="field">
-                                    <div class="control">
-                                        <label class="checkbox-wrap is-small">
-                                            <input id="house" type="checkbox" class="d-checkbox" checked>
-                                            <span></span>
-                                            House
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Checkbox -->
-                            <div class="column is-6">
-                                <div class="field">
-                                    <div class="control">
-                                        <label class="checkbox-wrap is-small">
-                                            <input id="office" type="checkbox" class="d-checkbox" checked>
-                                            <span></span>
-                                            Office
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Checkbox -->
-                            <div class="column is-6">
-                                <div class="field">
-                                    <div class="control">
-                                        <label class="checkbox-wrap is-small">
-                                            <input id="kids" type="checkbox" class="d-checkbox" checked>
-                                            <span></span>
-                                            Kids
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Checkbox -->
-                            <div class="column is-6">
-                                <div class="field">
-                                    <div class="control">
-                                        <label class="checkbox-wrap is-small">
-                                            <input id="kitchen" type="checkbox" class="d-checkbox" checked>
-                                            <span></span>
-                                            Kitchen
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Checkbox -->
-                            <div class="column is-6">
-                                <div class="field">
-                                    <div class="control">
-                                        <label class="checkbox-wrap is-small">
-                                            <input id="accessories" type="checkbox" class="d-checkbox" checked>
-                                            <span></span>
-                                            Misc
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Categories -->
-        
-                    <!-- Types -->
-                    <div class="filter-block">
-                        <h3 class="filter-title has-padding">Types</h3>
-                        <div class="columns is-checkboxes is-gapless is-multiline">
-                            <!-- Checkbox -->
-                            <div class="column is-6">
-                                <div class="field">
-                                    <div class="control">
-                                        <label class="checkbox-wrap is-small">
-                                            <input id="chairs" type="checkbox" class="d-checkbox" checked>
-                                            <span></span>
-                                            Chairs
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Checkbox -->
-                            <div class="column is-6">
-                                <div class="field">
-                                    <div class="control">
-                                        <label class="checkbox-wrap is-small">
-                                            <input id="couches" type="checkbox" class="d-checkbox" checked>
-                                            <span></span>
-                                            Couches
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Checkbox -->
-                            <div class="column is-6">
-                                <div class="field">
-                                    <div class="control">
-                                        <label class="checkbox-wrap is-small">
-                                            <input id="tables" type="checkbox" class="d-checkbox" checked>
-                                            <span></span>
-                                            Tables
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Checkbox -->
-                            <div class="column is-6">
-                                <div class="field">
-                                    <div class="control">
-                                        <label class="checkbox-wrap is-small">
-                                            <input id="beds" type="checkbox" class="d-checkbox" checked>
-                                            <span></span>
-                                            Beds
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Checkbox -->
-                            <div class="column is-6">
-                                <div class="field">
-                                    <div class="control">
-                                        <label class="checkbox-wrap is-small">
-                                            <input id="lights" type="checkbox" class="d-checkbox" checked>
-                                            <span></span>
-                                            Lights
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Checkbox -->
-                            <div class="column is-6">
-                                <div class="field">
-                                    <div class="control">
-                                        <label class="checkbox-wrap is-small">
-                                            <input id="devices" type="checkbox" class="d-checkbox" checked>
-                                            <span></span>
-                                            Devices
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Types -->
-                    
-                    <!-- Price range filter -->
-                    <div class="filter-block">
-                        <h3 class="filter-title">Price</h3>
-                        <div class="price-range-wrapper">
-                            <div class="price-limit">0</div>
-                            <div class="range-slider">
-                                <input class="input-range" type="range" value="1500" min="1" max="1500">
-                                <div class="slider-output">
-                                    <small>Show between</small><span class="range-value"></span>
-                                </div>
-                            </div>   
-                            <div class="price-limit">1500</div>
-                        </div>
+                    <div class="empty-cart has-text-centered">
+                        <h3>You can see all the ongoing bids you have placed over here</h3>
+                        <img src="assets/images/icons/new-cart.svg" alt="">
+                        <a href="shop.html" class="button big-button rounded">Start Bidding</a>
                     </div>
                 </div>
-        
+                <!--&lt;!&ndash; Total and checkout &ndash;&gt;-->
+                <!--<div class="cart-action">-->
+                    <!--<span class="cart-total">-->
+                        <!--<small>$</small>176,47-->
+                    <!--</span>-->
+                    <!--<a href="cart.html" class="button primary-button upper-button raised is-bold">-->
+                        <!--<span>Open Cart</span>-->
+                    <!--</a>-->
+                <!--</div>-->
+                <!--&lt;!&ndash; Cart quickview body &ndash;&gt;-->
+                <!--<div class="cart-body">-->
+                    <!--<ul class="shopping-cart-items">-->
+                        <!--&lt;!&ndash; Item &ndash;&gt;-->
+                        <!--<li class="clearfix">-->
+                            <!--<img src="assets/images/products/office5.jpg" alt="" />-->
+                            <!--<span class="item-meta">-->
+                                <!--<span class="item-name">Cosy Chair</span>-->
+                                <!--<span class="item-price">$88,00</span>-->
+                            <!--</span>-->
+                            <!--<span class="quantity">-->
+                                <!--<input class="input is-rounded" type="number" value="1">-->
+                            <!--</span>-->
+        <!---->
+                            <!--<span class="remove-item">-->
+                                <!--<i data-feather="x" class="has-simple-popover" data-content="Remove from Cart" data-placement="top"></i>-->
+                            <!--</span>-->
+                        <!--</li>-->
+                        <!--&lt;!&ndash; Item &ndash;&gt;-->
+                        <!--<li class="clearfix">-->
+                            <!--<img src="assets/images/products/cosy-red-seat.png" alt="" />-->
+                            <!--<span class="item-meta">-->
+                                <!--<span class="item-name">Red Seat</span>-->
+                                <!--<span class="item-price">$45,00</span>-->
+                            <!--</span>-->
+                            <!--<span class="quantity">-->
+                                <!--<input class="input is-rounded" type="number" value="1">-->
+                            <!--</span>-->
+        <!---->
+                            <!--<span class="remove-item">-->
+                                <!--<i data-feather="x" class="has-simple-popover" data-content="Remove from Cart" data-placement="top"></i>-->
+                            <!--</span>-->
+                        <!--</li>-->
+                        <!--&lt;!&ndash; Item &ndash;&gt;-->
+                        <!--<li class="clearfix">-->
+                            <!--<img src="assets/images/products/kids2.jpg" alt="" />-->
+                            <!--<span class="item-meta">-->
+                                <!--<span class="item-name">Rabbit Lamp</span>-->
+                                <!--<span class="item-price">$43,47</span>-->
+                            <!--</span>-->
+                            <!--<span class="quantity">-->
+                                <!--<input class="input is-rounded" type="number" value="3">-->
+                            <!--</span>-->
+        <!---->
+                            <!--<span class="remove-item">-->
+                                <!--<i data-feather="x" class="has-simple-popover" data-content="Remove from Cart" data-placement="top"></i>-->
+                            <!--</span>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
             </div>
         </div>
         
@@ -614,9 +400,32 @@
                                 <div class="value" id="currentBid">$65,00</div>
                             </div>
                             <!-- Add to Cart -->
-                            <div class="add-to-cart">
+                            <div class="add-to-cart" id="bid">
                                 <div class="heading is-vhidden">Bid on this</div>
-                                <button class="button big-button cart-button primary-button upper-button rounded is-bold raised">Bid on this</button>
+                                <button class="button big-button primary-button upper-button rounded is-bold raised">Bid on this</button>
+                            </div>
+
+                            <!-- Bid Modal -->
+                            <div class="modal" id="bidModal">
+                                <div class="modal-background"></div>
+                                <div class="modal-card">
+                                    <header class="modal-card-head">
+                                        <p class="modal-card-title">Bid Now</p>
+                                    </header>
+                                    <section class="modal-card-body">
+                                        <div>
+                                            <img src="assets/images/products/red-seat.jpg" height="200px" width="200px" style="float:left;">
+                                            <p style="padding:20px" id="modalProductDescription"></p>
+                                            <p>
+                                                <input class="input is-rounded" type="text" id="bidAmt" placeholder="Bid Amount:">
+                                            </p>
+                                        </div>
+                                    </section>
+                                    <footer class="modal-card-foot">
+                                        <button class="button is-success" id="confirmBid">Confirm Bid</button>
+                                        <button class="button" id="cancelBid">Cancel</button>
+                                    </footer>
+                                </div>
                             </div>
                         </div>
                     </div>
