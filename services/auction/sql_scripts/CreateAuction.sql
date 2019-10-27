@@ -5,7 +5,7 @@ begin
     insert into Auction(userId,title,description,imgUrl,startDate,endDate) values (arg_userId,arg_title,arg_description,arg_imgUrl,arg_startDate,arg_endDate);
     set arg_auctionId = (select auctionId from Auction where userId = arg_userId and title = arg_title);
 
-    insert into Product(title,description,imgUrl,startingBid,currentBid,closingBid,categoryId,auctionId) values (arg_title,arg_description, arg_imgUrl,arg_startingBid,null,null,arg_categoryId,arg_auctionId);
+    insert into Product(title,description,imgUrl,startingBid,currentBid,closingBid,categoryId,auctionId) values (arg_title,arg_description, arg_imgUrl,arg_startingBid,arg_startingBid,arg_startingBid,arg_categoryId,arg_auctionId);
 
     select * from Auction A inner join Product P on A.auctionId = P.auctionId where A.auctionId = arg_auctionId;
 end

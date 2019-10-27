@@ -97,7 +97,7 @@ let generateProductContainer = async (categoryId,categoryName) => {
 
     let products = '';
     auctions.map((elem,index) => {
-        products += ('<a href="product-carousel.html?auctionId=' + elem.auctionId + '"><div class="column is-6" id="' + elem.auctionId + '">\n' +
+        products += ('<a href="product-carousel.html?auctionId=' + elem.auctionId + '"  ><div class="column is-6" id="' + elem.auctionId + '">\n' +
             '                                    <div class="flat-card is-long">\n' +
             '                                        <div class="left-image is-md">\n' +
             '                                            <img src="assets/images/products/house2.jpg" alt="">\n' +

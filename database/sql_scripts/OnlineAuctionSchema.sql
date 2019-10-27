@@ -15,6 +15,8 @@ begin
         password varchar(512) not null
     );
 
+    -- status 0 ==> inActive
+    -- status 1 ==> Active
     create table Auction(
 		auctionId int primary key auto_increment,
         userId int not null,
@@ -31,6 +33,7 @@ begin
 		id int primary key auto_increment,
         userId int not null,
         auctionId int not null,
+        bidAmt decimal default 0,
         constraint foreign key(userId) references User(userId),
         constraint foreign key(auctionId) references Auction(auctionId)
 
@@ -47,9 +50,9 @@ begin
         title varchar(256) not null,
         description varchar(512),
         imgUrl varchar(512),
-        startingBid int default 0,
-        currentBid int default 0,
-        closingBid int default 0,
+        startingBid decimal default 0,
+        currentBid decimal default 0,
+        closingBid decimal default 0,
         categoryId int not null,
         auctionId int not null,
         constraint foreign key(categoryId) references Category(categoryId),
@@ -61,10 +64,14 @@ begin
         userId int not null unique,
         name varchar(256),
         imgUrl varchar(512),
-        address varchar(512),
+        houseNo varchar(128),
+        street varchar(128),
+        city varchar(128),
+        country varchar(128),
         age int default 18,
         dob date,
         sex varchar(3) default 'M',
+        wallet decimal default 0,
 		constraint foreign key(userId) references User(userId)
 
     );
