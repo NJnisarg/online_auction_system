@@ -121,6 +121,23 @@ const bid = async(options) => {
     });
 };
 
+const getMyBids = async(options) => {
+    return new Promise((resolve, reject) => {
+        conn.query({
+            sql: 'call GetMyBids(?)'
+            },
+            [options.userId] ,
+            (error,results,fields) => {
+                if(error)
+                {
+                    reject( "BID: Error bidding on the auction" + error);
+                }
+                resolve(results);
+            }
+        );
+    })
+};
+
 module.exports = {
     getAllAuctions,
     getAuction,
@@ -128,5 +145,6 @@ module.exports = {
     updateAuction,
     deleteAuction,
     getAuctionCategories,
-    bid
+    bid,
+    getMyBids
 };

@@ -78,6 +78,31 @@ const bid = async (req,res) => {
     }
 };
 
+const getMyBids = async (req,res) => {
+    try{
+        let result = await db.getMyBids(req.query);
+        console.log(result);
+        if(result[0].length === 0)
+            response(res,null,"Successfully retrieved my bids", result[0], 200);
+
+        let final_results = [];
+        final_results.add(result[0][0]);
+        let curr_auction_id = result[0][0].auctionId;
+        result[0].map((e,i) => {
+            if(curr_auction_id!==e.auctionId)
+            {
+                curr_auction_id = e.auctionId;
+                final_results.add(e);
+            }
+
+        });
+        response(res,null,"Successfully retrieved my bids", final_results, 200);
+    }catch(err){
+        console.log(err);
+        response(res, err, "Error. Could not fetch my bids", null, 500);
+    }
+};
+
 module.exports = {
     getAllAuctions, 
     getAuction,
@@ -85,5 +110,6 @@ module.exports = {
     updateAuction,
     deleteAuction,
     getAuctionCategories,
-    bid
+    bid,
+    getMyBids
 };
