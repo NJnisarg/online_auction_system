@@ -155,6 +155,23 @@ const getInvoice = async(options) => {
     })
 };
 
+const getMyPurchases = async(options) => {
+    return new Promise((resolve, reject) => {
+        conn.query({
+                sql: 'call GetMyPurchases(?)'
+            },
+            [options.userId],
+            (error,results,fields) => {
+                if(error)
+                {
+                    reject( "GET MY PURCHASES: Error getting invoice data" + error);
+                }
+                resolve(results);
+            }
+        );
+    })
+};
+
 module.exports = {
     getAllAuctions,
     getAuction,
@@ -164,5 +181,6 @@ module.exports = {
     getAuctionCategories,
     bid,
     getMyBids,
+    getMyPurchases,
     getInvoice,
 };

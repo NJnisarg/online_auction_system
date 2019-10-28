@@ -113,6 +113,17 @@ const getInvoice = async (req,res) => {
     }
 };
 
+const getMyPurchases = async (req,res) => {
+    try{
+        let result = await db.getMyPurchases(req.query);
+        console.log(result);
+        response(res, null, "Successfully retrieved the Invoice", result[0], 200);
+    }catch(err){
+        console.log(err);
+        response(res, err, "Error. Could not fetch your purchases", null, 404);
+    }
+};
+
 module.exports = {
     getAllAuctions, 
     getAuction,
@@ -122,5 +133,6 @@ module.exports = {
     getAuctionCategories,
     bid,
     getMyBids,
+    getMyPurchases,
     getInvoice,
 };
