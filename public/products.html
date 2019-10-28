@@ -31,139 +31,113 @@
 
     </head>
     <body>
-        
-        <!-- Pageloader -->
-        <div class="pageloader"></div>
-        <div class="infraloader is-active"></div>
-        <nav class="navbar mobile-navbar is-hidden-desktop is-hidden-tablet" aria-label="main navigation">
-            <!-- Brand -->
-            <div class="navbar-brand">
-                <a class="navbar-item" href="home.html">
-                    <img src="assets/images/logo/nephos.svg" alt="">
-                </a>
-        
-                <!-- Sidebar mode toggler icon -->
-                <a id="sidebar-mode" class="navbar-item is-icon is-sidebar-toggler" href="javascript:void(0);">
-                    <i data-feather="sidebar"></i>
-                </a>
-        
-                <!-- Mobile menu toggler icon -->
-                <div class="navbar-burger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            <!-- Navbar mobile menu -->
-        </nav>
-        <!-- Main Sidebar-->
-        <div class="main-sidebar">
-            <div class="sidebar-brand">
-                <a href="home.html"><img src="assets/images/logo/nephos.svg" alt=""></a>
-            </div>
-            <div class="sidebar-inner">
-                <ul class="icon-menu">
-                    <!-- Shop sidebar trigger -->
-                    <li>
-                        <a href="javascript:void(0);" id="open-shop"><i data-feather="home"></i></a>
-                    </li>
-                    <li>
-                        <a href="cart.html" id="open-cart"><i data-feather="shopping-cart"></i></a>
-                    </li>
-                    <!-- Cart sidebar trigger -->
 
-                    <li class="is-hidden-desktop is-hidden-tablet">
-                        <a href="javascript:void(0);" id="mobile-mode"><i data-feather="smartphone"></i></a>
-                    </li>        </ul>
-        
-                <!-- User account -->
-                <ul class="bottom-menu is-hidden-mobile">
-                    <li>
-                        <a href="javascript:void(0)" id="logOutBtn"></a>
-                    </li>
-                </ul>
-            </div>
+    <!-- Pageloader -->
+    <div class="pageloader"></div>
+    <div class="infraloader is-active"></div>
+    <nav class="navbar mobile-navbar is-hidden-desktop is-hidden-tablet" aria-label="main navigation">
+        <!-- Brand -->
+        <div class="navbar-brand">
+            <a class="navbar-item" href="home.html">
+                <img src="assets/images/logo/nephos.svg" alt="">
+            </a>
+
+            <!-- Sidebar mode toggler icon -->
+            <a id="sidebar-mode" class="navbar-item is-icon is-sidebar-toggler" href="javascript:void(0);">
+                <i data-feather="sidebar"></i>
+            </a>
         </div>
-        <!-- /Main Sidebar-->
-        
-        <!-- FAB -->
-        <div id="quickview-trigger"  class="menu-fab is-hidden-mobile">
-            <a class="hamburger-btn" href="javascript:void(0);">
-                <span class="menu-toggle">	
-                    <span class="icon-box-toggle"> 	
+    </nav>
+    <!-- Main Sidebar-->
+    <div class="main-sidebar">
+        <div class="sidebar-brand">
+            <a href="home.html"><img src="assets/images/logo/nephos.svg" alt=""></a>
+        </div>
+        <div class="sidebar-inner">
+            <ul class="icon-menu">
+                <!-- Shop sidebar trigger -->
+                <li>
+                    <a href="javascript:void(0);" id="open-shop"><i data-feather="home"></i></a>
+                </li>            <!-- Cart sidebar trigger -->
+                <li>
+                    <a href="open-cart" id="open-cart"><i data-feather="shopping-cart"></i></a>
+                </li>            <!-- Mobile mode trigger -->
+                <li class="is-hidden-desktop is-hidden-tablet">
+                    <a href="javascript:void(0);" id="mobile-mode"><i data-feather="smartphone"></i></a>
+                </li>        </ul>
+
+            <!-- User account -->
+            <ul class="bottom-menu is-hidden-mobile">
+                <li>
+                    <a href="javascript:void(0)" id="logOutBtn"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /Main Sidebar-->
+
+    <!-- FAB -->
+    <div id="quickview-trigger"  class="menu-fab is-hidden-mobile">
+        <a class="hamburger-btn" href="javascript:void(0);">
+                <span class="menu-toggle">
+                    <span class="icon-box-toggle">
                         <span class="rotate">
                             <i class="icon-line-top"></i>
                             <i class="icon-line-center"></i>
-                            <i class="icon-line-bottom"></i> 
+                            <i class="icon-line-bottom"></i>
                         </span>
                     </span>
                 </span>
-            </a>
-        </div><!-- /FAB -->
-        
-        <!-- Categories Right quickview -->
-        <div class="category-quickview">
-            <div class="inner">
-                <ul class="category-menu" id="rightCategoryMenu">
+        </a>
+    </div><!-- /FAB -->
 
-                </ul>
-        
-                <!--div class="all-categories is-hidden-mobile">
-                    <a href="products.html">Show all categories</a>
-                    <div class="centered-divider"></div>
-                </div-->
-            </div>
+    <!-- Categories Right quickview -->
+    <div class="category-quickview">
+        <div class="inner">
+            <ul class="category-menu" id="rightCategoryMenu">
+
+            </ul>
         </div>
-        
-        <!-- Shop quickview -->
-        <div class="shop-quickview has-background-image" data-background="assets/images/bg/sidebar.jpg">
-            <div class="inner">
-                <!-- Header -->
-                <div class="quickview-header">
-                    <h2>Nephos</h2>
-                    <span id="close-shop-sidebar"><i data-feather="x"></i></span>
-                </div>
-                <!-- Shop menu -->
-                <ul class="shop-menu">
-                    <li>
-                        <a href="shop.html">
-                            <span>Shop</span>
-                            <i data-feather="grid"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="account.html">
-                            <span>My Account</span>
-                            <i data-feather="user"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="orders.html">
-                            <span>My Orders</span>
-                            <i data-feather="credit-card"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="wishlist.html">
-                            <span>My Auctions</span>
-                            <i data-feather="heart"></i>
-                        </a>
-                    </li>
-                </ul>
-                <!-- Profile image -->
-                <ul class="user-profile">
-                    <li>
-                        <a href="account.html">
-                            <img src="assets/images/avatars/altvatar.png" alt="">
-                            <span class="user">
-                                <span>Guest</span>
-                                <span>0 <small>Items I have Bidded</small></span>
-                            </span>
-                        </a>
-                    </li>
-                </ul>
+    </div>
+
+    <!-- Shop quickview -->
+    <div class="shop-quickview has-background-image" data-background="assets/images/bg/sidebar.jpg">
+        <div class="inner">
+            <!-- Header -->
+            <div class="quickview-header">
+                <h2>Nephos</h2>
+                <span id="close-shop-sidebar"><i data-feather="x"></i></span>
             </div>
+            <!-- Shop menu -->
+            <ul class="shop-menu">
+                <li>
+                    <a href="shop.html">
+                        <span>Category</span>
+                        <i data-feather="grid"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="account.html">
+                        <span>My Account</span>
+                        <i data-feather="user"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="orders.html">
+                        <span>My Purchases</span>
+                        <i data-feather="credit-card"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="wishlist.html">
+                        <span>My Auctions</span>
+                        <i data-feather="heart"></i>
+                    </a>
+                </li>
+            </ul>
+
         </div>
+    </div>
         <!-- Filters quickview -->
         <div class="filters-quickview">
             <div class="inner">
@@ -346,7 +320,7 @@
         
         <!-- Main wrapper -->
         <div class="shop-wrapper">
-        
+
             <!-- Search overlay -->
             <div class="search-overlay"></div>
             
