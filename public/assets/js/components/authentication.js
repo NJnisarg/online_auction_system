@@ -55,7 +55,12 @@ const login = async () => {
     let login_password = $("#login-password").val();
 
     if(login_email.length === 0 || login_password===0) {
-        alert("Login Password or Email-id cannot be empty");
+        iziToast.show({
+            title: 'Error',
+            message: 'Login Password or Email-id cannot be empty',
+            titleColor: 'black',
+            backgroundColor: 'yellow'
+        });
     }
     else {
         console.log(login_email + "  " + login_password);
@@ -73,15 +78,30 @@ const login = async () => {
             };
             localStorage.removeItem("userData");
             localStorage.setItem("userData", JSON.stringify(localData));
-            alert(message);
-            window.location = "index.html";
+            iziToast.show({
+                title: 'Success',
+                message: message,
+                titleColor: 'black',
+                backgroundColor: 'yellow'
+            });
+            window.location = "home.html";
         }
         else if(message === "Passwords do not match" && error===null) {
-            alert("Password is Incorrect, Please try again");
+            iziToast.show({
+                title: 'Error',
+                message: 'Password is Incorrect, Please try again',
+                titleColor: 'black',
+                backgroundColor: 'yellow'
+            });
             $("#login-email").val(null);
             $("#login-password").val(null);
         } else if(message === "No such user exists" && error===null) {
-            alert(message);
+            iziToast.show({
+                title: 'Error',
+                message: message,
+                titleColor: 'black',
+                backgroundColor: 'yellow'
+            });
             $("#login-email").val(null);
             $("#login-password").val(null);
         }
@@ -95,16 +115,36 @@ const register = async () => {
     let confirm_password = $("#register-confirm").val();
 
     if(confirm_password !== register_password) {
-        alert("Passwords do not match!!!");
+        iziToast.show({
+            title: 'Error',
+            message: 'Passwords do not match!!!',
+            titleColor: 'black',
+            backgroundColor: 'yellow'
+        });
     }
     else if(register_email.includes("@") === false) {
-        alert("Email-Id is Invalid, Enter a valid email-Id");
+        iziToast.show({
+            title: 'Error',
+            message: 'Passwords do not match!!!',
+            titleColor: 'black',
+            backgroundColor: 'yellow'
+        });
     }
     else if(register_password.length < 8) {
-        alert("Password should be of size at least 8");
+        iziToast.show({
+            title: 'Error',
+            message: 'Password should be of size at least 8',
+            titleColor: 'black',
+            backgroundColor: 'yellow'
+        });
     }
     else if(register_username.length===0 || register_password.length===0 || register_email.length===0) {
-        alert("Input field cannot be empty");
+        iziToast.show({
+            title: 'Error',
+            message: 'Input field cannot be empty',
+            titleColor: 'black',
+            backgroundColor: 'yellow'
+        });
     }
     else {
         console.log(register_username + "   " + register_password + "    " + register_email);
@@ -118,7 +158,12 @@ const register = async () => {
             };
             localStorage.removeItem("userData");
             localStorage.setItem("userData", JSON.stringify(localData));
-            alert(response.message);
+            iziToast.show({
+                title: 'Success',
+                message: response.message,
+                titleColor: 'black',
+                backgroundColor: 'yellow'
+            });
             window.location = "home.html";
         }
     }
