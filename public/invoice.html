@@ -34,8 +34,6 @@
     <!-- Pageloader -->
     <div class="pageloader"></div>
     <div class="infraloader is-active"></div>
-
-    <!-- Mobile mode navbar -->
     <nav class="navbar mobile-navbar is-hidden-desktop is-hidden-tablet" aria-label="main navigation">
         <!-- Brand -->
         <div class="navbar-brand">
@@ -47,10 +45,8 @@
             <a id="sidebar-mode" class="navbar-item is-icon is-sidebar-toggler" href="javascript:void(0);">
                 <i data-feather="sidebar"></i>
             </a>
-
         </div>
     </nav>
-    <!-- /Mobile mode navbar -->
     <!-- Main Sidebar-->
     <div class="main-sidebar">
         <div class="sidebar-brand">
@@ -63,13 +59,11 @@
                     <a href="javascript:void(0);" id="open-shop"><i data-feather="home"></i></a>
                 </li>            <!-- Cart sidebar trigger -->
                 <li>
-                    <a href="cart.html" id="open-cart"><i data-feather="shopping-cart"></i></a>
-                </li>
-                <!-- Mobile mode trigger -->
+                    <a href="open-cart" id="open-cart"><i data-feather="shopping-cart"></i></a>
+                </li>            <!-- Mobile mode trigger -->
                 <li class="is-hidden-desktop is-hidden-tablet">
                     <a href="javascript:void(0);" id="mobile-mode"><i data-feather="smartphone"></i></a>
-                </li>
-            </ul>
+                </li>        </ul>
 
             <!-- User account -->
             <ul class="bottom-menu is-hidden-mobile">
@@ -100,12 +94,8 @@
     <div class="category-quickview">
         <div class="inner">
             <ul class="category-menu" id="rightCategoryMenu">
-            </ul>
 
-            <!--div class="all-categories is-hidden-mobile">
-                <a href="products.html">Show all categories</a>
-                <div class="centered-divider"></div>
-            </div-->
+            </ul>
         </div>
     </div>
 
@@ -121,7 +111,7 @@
             <ul class="shop-menu">
                 <li>
                     <a href="shop.html">
-                        <span>Shop</span>
+                        <span>Category</span>
                         <i data-feather="grid"></i>
                     </a>
                 </li>
@@ -133,7 +123,7 @@
                 </li>
                 <li>
                     <a href="orders.html">
-                        <span>My Orders</span>
+                        <span>My Purchases</span>
                         <i data-feather="credit-card"></i>
                     </a>
                 </li>
@@ -144,18 +134,7 @@
                     </a>
                 </li>
             </ul>
-            <!-- Profile image -->
-            <ul class="user-profile">
-                <li>
-                    <a href="account.html">
-                        <img src="assets/images/avatars/altvatar.png" alt="">
-                        <span class="user">
-                                <span>Guest</span>
-                                <span>0 <small>Items I have Bidded</small></span>
-                            </span>
-                    </a>
-                </li>
-            </ul>
+
         </div>
     </div>
         <!-- Main wrapper -->
