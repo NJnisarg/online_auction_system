@@ -26,6 +26,7 @@
         <link rel="stylesheet" href="assets/js/jpcard/card.css">
         <link rel="stylesheet" href="assets/css/chosen/chosen.css">
         <link rel="stylesheet" href="assets/css/icons.min.css">
+        <link rel="stylesheet" href="assets/css/picUpload.css">
 
     </head>
     <body>
@@ -812,12 +813,21 @@
                             <section class="modal-card-body">
                                 <div class="columns">
                                     <div class="column is-4">
-                                        <img src="assets/images/products/red-seat.jpg" height="200px" width="200px">
-                                            <p>Category</p>
-                                            <div class="control is-rounded" style="background-color: white">
-                                                    <select class="select is-medium is-rounded" style="background-color: white" id="auction-category">
-                                                    </select>
+                                        <div class="avatar-upload">
+                                            <div class="avatar-edit">
+                                                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                                <label for="imageUpload"></label>
                                             </div>
+                                            <div class="avatar-preview">
+                                                <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>Category</p>
+                                        <div class="control is-rounded" style="background-color: white">
+                                                <select class="select is-medium is-rounded" style="background-color: white" id="auction-category">
+                                                </select>
+                                        </div>
                                     </div>
                                     <div class="column is-8">
                                         <div class="column is-12">
@@ -884,5 +894,6 @@
         <script src="assets/js/nephos.js"></script>
 
         <script src="assets/js/components/wishlist.js" type="module" crossorigin></script>
+        <script src="assets/js/picUpload.js"></script>
     </body>
 </html>

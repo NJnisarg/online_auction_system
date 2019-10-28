@@ -49,20 +49,25 @@ const editUserProfile = async (editRequest) => {
 };
 
 let viewEditProfile = profile => {
-    let first_name = profile[0].name.split(' ')[0];
-    let last_name = profile[0].name.split(' ')[1];
+    // let first_name = profile[0].name.split(' ')[0];
+    // let last_name = profile[0].name.split(' ')[1];
+    let first_name = "";
+    let last_name = "";
     let profileEditDetail = '<div class="column is-4">\n' +
         '                                    <!-- Upload Avatar -->\n' +
         '                                    <div class="flat-card upload-card is-auto">\n' +
         '                                        <div class="card-body">\n' +
         '                                            <!-- Avatar form -->\n' +
-        '                                            <div id="avatar-upload" class="avatar-wrapper has-simple-popover" data-content="Change profile picture" data-placement="top">\n' +
-        '                                                <img class="profile-pic" src="https://image.ibb.co/b04PYv/placeholder_w.jpg" alt="">\n' +
-        '                                                <div class="upload-button">\n' +
-        '                                                    <i class="upload-icon" data-feather="plus" aria-hidden="true"></i>\n' +
-        '                                                </div>\n' +
-        '                                                <input class="file-upload" type="file" accept="image/*"/>\n' +
+                                                '<div class="avatar-upload">\n' +
+        '                                            <div class="avatar-edit">\n' +
+        '                                                <input type=\'file\' id="imageUpload" accept=".png, .jpg, .jpeg" />\n' +
+        '                                                <label for="imageUpload"></label>\n' +
         '                                            </div>\n' +
+        '                                            <div class="avatar-preview">\n' +
+        '                                                <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);">\n' +
+        '                                                </div>\n' +
+        '                                            </div>\n' +
+        '                                        </div>' +
         '                                            <!-- /Avatar form -->\n' +
         '        \n' +
         '                                            <!-- User -->\n' +
@@ -213,6 +218,21 @@ let viewEditProfile = profile => {
     $('#edit-profile-submit').click(function () {
         edit();
     });
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+                $('#imagePreview').hide();
+                $('#imagePreview').fadeIn(650);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#imageUpload").change(function() {
+        readURL(this);
+    });
 };
 
 const edit = async () => {
@@ -226,7 +246,8 @@ const edit = async () => {
         street: $("#edit-street").val(),
         city: $("#edit-city").val(),
         country: $("#edit-country").val(),
-        wallet: parseFloat($("#edit-wallet").val())
+        wallet: parseFloat($("#edit-wallet").val()),
+        imgUrl: "assets/images/backend/" + document.getElementById("imageUpload").files[0].name
     };
     console.log(editRequest);
 

@@ -216,9 +216,9 @@ $(document).ready( () => {
                 startDate: $('#auction-start-date').val(),
                 endDate: $('#auction-end-date').val(),
                 categoryId: parseInt(categoryId),
-                startingBid: $('#auction-starting-bid').val()
+                startingBid: $('#auction-starting-bid').val(),
+                imgUrl: "assets/images/backend/" + document.getElementById("imageUpload").files[0].name
             };
-            console.log(JSON.stringify(data) + " " + categoryId);
 
             createAuction(data).then( response => {
                 if(response !== null) {
@@ -234,7 +234,7 @@ $(document).ready( () => {
                 }
                 else {
                     iziToast.show({
-                        title: 'Error 1',
+                        title: 'Error',
                         message: 'Error in creating the auction',
                         titleColor: 'Red',
                         messageColor: 'Red',
@@ -243,7 +243,7 @@ $(document).ready( () => {
                 }
             }).catch( err => {
                 iziToast.show({
-                    title: 'Error 2',
+                    title: 'Error',
                     message: err,
                     titleColor: 'Red',
                     messageColor: 'Red',
