@@ -178,7 +178,7 @@ $(document).ready(() => {
                     title: 'Error',
                     message: 'Please Login first to Bid!',
                     titleColor: 'black',
-                    backgroundColor: 'green'
+                    backgroundColor: 'yellow'
                 });
 
                 return;

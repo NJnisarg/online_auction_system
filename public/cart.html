@@ -107,11 +107,7 @@
                         <a href="javascript:void(0);" id="open-shop"><i data-feather="home"></i></a>
                     </li>            <!-- Cart sidebar trigger -->
                     <li>
-                        <a href="javascript:void(0);" id="open-cart"><i data-feather="shopping-cart"></i><span class="cart-items"></span></a>
-                    </li>            <!-- Search trigger -->
-                    <li>
-                        <a href="javascript:void(0);" id="open-search"><i data-feather="search"></i></a>
-                        <a href="javascript:void(0);" id="close-search" class="is-hidden is-inactive"><i data-feather="x"></i></a>
+                        <a href="cart.html" id="open-cart"><i data-feather="shopping-cart"></i><span class="cart-items"></span></a>
                     </li>            <!-- Mobile mode trigger -->
                     <li class="is-hidden-desktop is-hidden-tablet">
                         <a href="javascript:void(0);" id="mobile-mode"><i data-feather="smartphone"></i></a>
@@ -709,11 +705,7 @@
                             </svg>                </a>
                     </li>
                 </ul>
-        
-                <!--div class="all-categories is-hidden-mobile">
-                    <a href="products.html">Show all categories</a>
-                    <div class="centered-divider"></div>
-                </div-->
+
             </div>
         </div>
         
@@ -766,107 +758,10 @@
                 </ul>
             </div>
         </div>
-        <!-- Cart quickview -->
-        <div class="cart-quickview">
-            <div class="inner">
-                <!-- Header -->
-                <div class="quickview-header">
-                    <h2>Quick Cart</h2>
-                    <span id="close-cart-sidebar"><i data-feather="x"></i></span>
-                </div>
-                <!-- Total and checkout -->
-                <div class="cart-action">
-                    <span class="cart-total">
-                        <small>$</small>1521,94
-                    </span>
-                    <a href="cart.html" class="button primary-button feather-button is-bold raised">
-                        <span>Open Cart</span>
-                    </a>
-                </div>
-                <!-- Cart quickview body -->
-                <div class="cart-body">
-                    <ul class="shopping-cart-items">
-                        <!-- Item -->
-                        <li class="clearfix">
-                            <img src="assets/images/products/office6.png" alt="" />
-                            <span class="item-meta">
-                                <span class="item-name">Conqueror</span>
-                                <span class="item-price">$385,00</span>
-                            </span>
-                            <span class="quantity">
-                                <input class="input is-rounded" type="number" value="1">
-                            </span>
-        
-                            <span class="remove-item">
-                                <i data-feather="x" class="has-simple-popover" data-content="Remove from Cart" data-placement="top"></i>
-                            </span>
-                        </li>
-                        <!-- Item -->
-                        <li class="clearfix">
-                            <img src="assets/images/products/office7.gif" alt="" />
-                            <span class="item-meta">
-                                <span class="item-name">Gentleman</span>
-                                <span class="item-price">$329,00</span>
-                            </span>
-                            <span class="quantity">
-                                <input class="input is-rounded" type="number" value="1">
-                            </span>
-        
-                            <span class="remove-item">
-                                <i data-feather="x" class="has-simple-popover" data-content="Remove from Cart" data-placement="top"></i>
-                            </span>
-                        </li>
-                        <!-- Item -->
-                        <li class="clearfix">
-                            <img src="assets/images/products/kids7.jpg" alt="" />
-                            <span class="item-meta">
-                                <span class="item-name">Child Desk</span>
-                                <span class="item-price">$278,47</span>
-                            </span>
-                            <span class="quantity">
-                                <input class="input is-rounded" type="number" value="1">
-                            </span>
-        
-                            <span class="remove-item">
-                                <i data-feather="x" class="has-simple-popover" data-content="Remove from Cart" data-placement="top"></i>
-                            </span>
-                        </li>
-                        <!-- Item -->
-                        <li class="clearfix">
-                            <img src="assets/images/products/access4.jpg" alt="" />
-                            <span class="item-meta">
-                                <span class="item-name">Design Shelf</span>
-                                <span class="item-price">$529,47,00</span>
-                            </span>
-                            <span class="quantity">
-                                <input class="input is-rounded" type="number" value="1">
-                            </span>
-        
-                            <span class="remove-item">
-                                <i data-feather="x" class="has-simple-popover" data-content="Remove from Cart" data-placement="top"></i>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
         
         <!-- Main wrapper -->
         <div class="shop-wrapper">
-        
-            <!-- Search overlay -->
-            <div class="search-overlay"></div>
-            
-            <!-- Search input -->
-            <div class="search-input-wrapper is-desktop is-hidden">
-                <div class="field">
-                    <div class="control">
-                        <input type="text" name="search" autofocus required>
-                        <span id="clear-search" role="button"><i data-feather="x"></i></span>
-                        <span class="search-help">Type the name of the product you are looking for</span>
-                    </div>
-                </div>
-            </div>
             <!-- Main section -->
             <div class="section">
                 <!-- Container -->
@@ -876,7 +771,7 @@
                     <div class="columns account-header">
                         <div class="column is-10 is-offset-1 is-tablet-landscape-padded">
                             <div class="account-title">
-                                <h2>MY CART</h2>
+                                <h2>My Biddings</h2>
                                 <img class="brand-filigrane" src="assets/images/logo/nephos-greyscale.svg" alt="">
                             </div>
         
@@ -884,8 +779,8 @@
                             <div class="tabs account-tabs">
                                 <ul>
                                     <li><a href="account.html">Account</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li class="is-active"><a href="cart.html">Cart</a></li>
+                                    <li><a href="wishlist.html">Auctions</a></li>
+                                    <li class="is-active"><a href="cart.html">Biddings</a></li>
                                     <li><a href="orders.html">Orders</a></li>
                                 </ul>
                             </div>
@@ -901,139 +796,8 @@
                             </div>
         
                             <!-- Cart Layout -->
-                            <div class="columns is-account-grid is-multiline">
+                            <div id="my-bid-list" class="columns is-account-grid is-multiline">
                                 <!-- Product list -->
-                                <div class="column is-12">
-                                    <!-- Product -->
-                                    <div class="flat-card is-auto cart-card">
-                                        <ul class="cart-content">
-                                            <li>
-                                                <img src="assets/images/products/office6.png" alt="">
-                                                <span class="product-info">
-                                                    <span>The Conqueror</span>
-                                                    <span>Office</span>
-                                                </span>
-                                                <span class="product-price">
-                                                    <span>Price</span>
-                                                    <span>385,00</span>
-                                                </span>
-        
-                                                <span class="product-quantity">
-                                                    <span>Qty</span>
-                                                    <span class="control">
-                                                        <input class="input" type="number" value="1">
-                                                    </span>
-                                                </span>
-        
-                                                <span class="action">
-                                                    <span class="action-link is-like has-simple-popover" data-content="Add to Wishlist" data-placement="top">
-                                                        <a href="#"><i class="feather-icons" data-feather="heart"></i></a>
-                                                    </span>
-                                                    <span class="action-link is-remove has-simple-popover" data-content="Remove from Cart" data-placement="top">
-                                                        <a href="#"><i class="feather-icons" data-feather="x"></i></a>
-                                                    </span>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Product -->
-                                    <div class="flat-card is-auto cart-card">
-                                        <ul class="cart-content">
-                                            <li>
-                                                <img src="assets/images/products/office7.gif" alt="">
-                                                <span class="product-info">
-                                                    <span>The Gentleman</span>
-                                                    <span>Office</span>
-                                                </span>
-                                                <span class="product-price">
-                                                    <span>Price</span>
-                                                    <span>329,00</span>
-                                                </span>
-        
-                                                <span class="product-quantity">
-                                                    <span>Qty</span>
-                                                    <span class="control">
-                                                        <input class="input" type="number" value="1">
-                                                    </span>
-                                                </span>
-        
-                                                <span class="action">
-                                                    <span class="action-link is-like has-simple-popover" data-content="Add to Wishlist" data-placement="top">
-                                                        <a href="#"><i class="feather-icons" data-feather="heart"></i></a>
-                                                    </span>
-                                                    <span class="action-link is-remove has-simple-popover" data-content="Remove from Cart" data-placement="top">
-                                                        <a href="#"><i class="feather-icons" data-feather="x"></i></a>
-                                                    </span>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Product -->
-                                    <div class="flat-card is-auto cart-card">
-                                        <ul class="cart-content">
-                                            <li>
-                                                <img src="assets/images/products/kids7.jpg" alt="">
-                                                <span class="product-info">
-                                                    <span>Child Desk</span>
-                                                    <span>Kids</span>
-                                                </span>
-                                                <span class="product-price">
-                                                    <span>Price</span>
-                                                    <span>278,00</span>
-                                                </span>
-        
-                                                <span class="product-quantity">
-                                                    <span>Qty</span>
-                                                    <span class="control">
-                                                        <input class="input" type="number" value="1">
-                                                    </span>
-                                                </span>
-        
-                                                <span class="action">
-                                                    <span class="action-link is-like has-simple-popover" data-content="Add to Wishlist" data-placement="top">
-                                                        <a href="#"><i class="feather-icons" data-feather="heart"></i></a>
-                                                    </span>
-                                                    <span class="action-link is-remove has-simple-popover" data-content="Remove from Cart" data-placement="top">
-                                                        <a href="#"><i class="feather-icons" data-feather="x"></i></a>
-                                                    </span>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Product -->
-                                    <div class="flat-card is-auto cart-card">
-                                        <ul class="cart-content">
-                                            <li>
-                                                <img src="assets/images/products/access4.jpg" alt="">
-                                                <span class="product-info">
-                                                    <span>Design Shelf</span>
-                                                    <span>House</span>
-                                                </span>
-                                                <span class="product-price">
-                                                    <span>Price</span>
-                                                    <span>529,00</span>
-                                                </span>
-        
-                                                <span class="product-quantity">
-                                                    <span>Qty</span>
-                                                    <span class="control">
-                                                        <input class="input" type="number" value="1">
-                                                    </span>
-                                                </span>
-        
-                                                <span class="action">
-                                                    <span class="action-link is-like has-simple-popover" data-content="Add to Wishlist" data-placement="top">
-                                                        <a href="#"><i class="feather-icons" data-feather="heart"></i></a>
-                                                    </span>
-                                                    <span class="action-link is-remove has-simple-popover" data-content="Remove from Cart" data-placement="top">
-                                                        <a href="#"><i class="feather-icons" data-feather="x"></i></a>
-                                                    </span>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- /Product -->
-                                </div>
                             </div>
                             <!-- /Cart Layout -->
                         </div>
@@ -1041,163 +805,6 @@
                     <!-- /Cart page -->
         
                     <!-- Recently Viewed -->
-                    <div class="columns category-header low-padding">
-                        <div class="column is-10 is-offset-1 is-tablet-landscape-padded">
-                            <!-- Title -->
-                            <div class="category-title">
-                                <h2 class="is-small">RECENTLY VIEWED</h2>
-                            </div>
-        
-                            <!-- Product grid -->
-                            <div class="columns no-controls is-product-grid is-multiline">
-                                <!-- Product -->
-                                <div class="column is-9">
-                                    <div class="flat-card is-long">
-                                        <div class="left-image is-md">
-                                            <img src="assets/images/products/red-seat.jpg" alt="">
-                                        </div>
-                                        <div class="product-info">
-                                            <a href="#"><h3 class="product-name featured">Red Alcove</h3></a>
-                                            <p class="product-description">Lorem ipsum sit dolor amet</p>
-                                            <p class="product-price">
-                                                90,00
-                                            </p>
-                                        </div>
-        
-                                        <div class="actions">
-                                            <div class="add"><i data-feather="shopping-cart"></i></div>
-                                            <div class="like"><i data-feather="heart"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Product -->
-                                <div class="column is-3">
-                                    <div class="flat-card">
-                                        <div class="image">
-                                            <img src="assets/images/products/cosy-red-seat.png" alt="">
-                                        </div>
-                                        <div class="product-info has-text-centered">
-                                            <a href="#"><h3 class="product-name">Red Seat</h3></a>
-                                            <p class="product-description">Lorem ipsum sit dolor amet</p>
-                                            <p class="product-price">
-                                                75,00
-                                            </p>
-                                        </div>
-        
-                                        <div class="actions">
-                                            <div class="add"><i data-feather="shopping-cart"></i></div>
-                                            <div class="like"><i data-feather="heart"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Product -->
-                                <div class="column is-3">
-                                    <div class="flat-card">
-                                        <div class="image">
-                                            <img src="assets/images/products/office4.jpg" alt="">
-                                        </div>
-                                        <div class="product-info has-text-centered">
-                                            <a href="#"><h3 class="product-name">Executive</h3></a>
-                                            <p class="product-description">Lorem ipsum sit dolor amet</p>
-                                            <p class="product-price">
-                                                125,00
-                                            </p>
-                                        </div>
-        
-                                        <div class="actions">
-                                            <div class="add"><i data-feather="shopping-cart"></i></div>
-                                            <div class="like"><i data-feather="heart"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Product -->
-                                <div class="column is-3">
-                                    <div class="flat-card">
-                                        <div class="image">
-                                            <img src="assets/images/products/office5.jpg" alt="">
-                                        </div>
-                                        <div class="product-info has-text-centered">
-                                            <a href="#"><h3 class="product-name">Cosy chair</h3></a>
-                                            <p class="product-description">Lorem ipsum sit dolor amet</p>
-                                            <p class="product-price">
-                                                88,00
-                                            </p>
-                                        </div>
-        
-                                        <div class="actions">
-                                            <div class="add"><i data-feather="shopping-cart"></i></div>
-                                            <div class="like"><i data-feather="heart"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Product -->
-                                <div class="column">
-                                    <div class="flat-card is-long">
-                                        <div class="left-image is-md">
-                                            <img src="assets/images/products/office3.jpg" alt="">
-                                        </div>
-                                        <div class="product-info">
-                                            <a href="#"><h3 class="product-name featured-md">Ambassador</h3></a>
-                                            <p class="product-description">Lorem ipsum sit dolor amet</p>
-                                            <p class="product-price">
-                                                480,00
-                                            </p>
-                                        </div>
-        
-                                        <div class="actions">
-                                            <div class="add"><i data-feather="shopping-cart"></i></div>
-                                            <div class="like"><i data-feather="heart"></i></div>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <!-- Product -->
-                                <div class="column is-6">
-                                    <div class="flat-card is-long">
-                                        <div class="left-image is-md">
-                                            <img src="assets/images/products/office6.png" alt="">
-                                        </div>
-                                        <div class="product-info">
-                                            <a href="#"><h3 class="product-name featured-md">Conqueror</h3></a>
-                                            <p class="product-description">Lorem ipsum sit dolor amet</p>
-                                            <p class="product-price">
-                                                590,00
-                                            </p>
-                                        </div>
-        
-                                        <div class="actions">
-                                            <div class="add"><i data-feather="shopping-cart"></i></div>
-                                            <div class="like"><i data-feather="heart"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Product -->
-                                <div class="column is-6">
-                                    <div class="flat-card is-long">
-                                        <div class="left-image is-md">
-                                            <img src="assets/images/products/office7.gif" alt="">
-                                        </div>
-                                        <div class="product-info">
-                                            <a href="#"><h3 class="product-name featured-md">Gentleman</h3></a>
-                                            <p class="product-description">Lorem ipsum sit dolor amet</p>
-                                            <p class="product-price">
-                                                375,00
-                                            </p>
-                                        </div>
-        
-                                        <div class="actions">
-                                            <div class="add"><i data-feather="shopping-cart"></i></div>
-                                            <div class="like"><i data-feather="heart"></i></div>
-                                        </div>
-                                    </div>
-                                </div> 
-                            </div>
-                            <!-- /Product grid -->
-        
-                            <div class="show-more"><a href="#">Show more products</a></div>
-        
-                        </div>
-                    </div> 
-                    <!-- /Recently Viewed -->
                 </div>
                 <!-- /Container -->
             </div>
@@ -1207,7 +814,10 @@
         <!-- Concatenated plugins -->
         <script src="assets/js/app.js"></script>
         <!-- Helios js -->
-        <script src="assets/js/nephos.js"></script>    </body>  
+        <script src="assets/js/nephos.js"></script>
 
-<!-- Mirrored from nephos.cssninja.io/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Oct 2019 10:20:05 GMT -->
+        <script src="assets/js/components/cart.js" type="module" crossorigin></script>
+
+    </body>
+
 </html>

@@ -47,7 +47,7 @@ const updateAuction = async (req, res) => {
 
 const deleteAuction = async (req, res) => {
     try{
-        let result = await db.deleteAuction(req.query);
+        let result = await db.deleteAuction(req.body);
         console.log(result);
         response(res,null,"Successfully deleted the auction", result[0], 200);
     }catch(err){
@@ -86,15 +86,14 @@ const getMyBids = async (req,res) => {
             response(res,null,"Successfully retrieved my bids", result[0], 200);
 
         let final_results = [];
-        final_results.add(result[0][0]);
+        final_results.push(result[0][0]);
         let curr_auction_id = result[0][0].auctionId;
         result[0].map((e,i) => {
             if(curr_auction_id!==e.auctionId)
             {
                 curr_auction_id = e.auctionId;
-                final_results.add(e);
+                final_results.push(e);
             }
-
         });
         response(res,null,"Successfully retrieved my bids", final_results, 200);
     }catch(err){

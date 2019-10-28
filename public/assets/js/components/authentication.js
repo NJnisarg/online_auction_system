@@ -139,7 +139,3 @@ $(document).ready(() => {
         window.location = "home.html";
     }
 });
-
-module.exports = {
-
-};
