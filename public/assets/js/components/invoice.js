@@ -125,6 +125,9 @@ let generateInvoice = async () => {
     let winUrl = window.location.href;
     let auctionId = winUrl.split('?auctionId=')[1];
     let invoiceData = await getInvoice(auctionId);
+    if(invoiceData === null || invoiceData===undefined || invoiceData.length===0)
+        window.location = "orders.html";
+
     invoiceData = invoiceData[0];
 
     let selfProfile = await getMyProfile();
@@ -246,12 +249,26 @@ let generateInvoice = async () => {
 };
 
 $(document).ready(() => {
-
-    // if(localStorage.getItem("userData")===null || localStorage.getItem("userData")===undefined)
-    // {
-    //     // window.location = "authentication.html"
-    // }
-    localStorage.setItem("userData", JSON.stringify({userId:3, token:3}));
+    if(localStorage.getItem('userData') === undefined || localStorage.getItem('userData') === null) {
+        window.location = "authentication.html";
+    }
+    else{
+        let logOutBtn = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>';
+        $('#logOutBtn').append(logOutBtn);
+        $('#logOutBtn').click(() => {
+            localStorage.clear();
+            iziToast.show({
+                timeout: 1500,
+                title: 'Success',
+                message: "User logged out successfully",
+                titleColor: 'black',
+                backgroundColor: 'green',
+                onClosing: () => {
+                    window.location = "authentication.html"
+                }
+            });
+        });
+    }
 
     generateRightMenu();
     generateInvoice();
