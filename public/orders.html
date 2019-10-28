@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<!-- Mirrored from nephos.cssninja.io/orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Oct 2019 10:20:02 GMT -->
+
 <head>
         <!-- Required meta tags always come first -->
         <meta charset="utf-8">
@@ -182,6 +181,34 @@
                         </div>
                     </div>
                     <!-- /Orders Grid -->
+                    <!-- Bid Modal -->
+                    <div class="modal" id="add-modal-pay-now">
+                        <div class="modal-background"></div>
+                        <div class="modal-card">
+                            <header class="modal-card-head">
+                                <p class="modal-card-title">Pay Amount</p>
+                            </header>
+                            <section class="modal-card-body">
+                                <div class="columns">
+                                    <div class="column is-12">
+                                        <div class="column is-12">
+                                            <div class="info-block">
+                                                <span class="label-text">Amount</span>
+                                                <div class="control">
+                                                    <input id="pay-amount" type="number" class="input is-default" value="" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /Edit contact Info -->
+                                </div>
+                            </section>
+                            <footer class="modal-card-foot">
+                                <button class="button is-success" id="confirm-pay-amount">Confirm</button>
+                                <button class="button" id="cancel-pay-amount">Cancel</button>
+                            </footer>
+                        </div>
+                    </div>
                 </div>
                 <!-- /Container -->
             </div>
@@ -196,6 +223,4 @@
         <script src="assets/js/components/orders.js"></script>
 
     </body>
-
-<!-- Mirrored from nephos.cssninja.io/orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Oct 2019 10:20:05 GMT -->
 </html>

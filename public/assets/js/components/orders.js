@@ -12,7 +12,7 @@ const getMyPurchases = async () => {
     };
 
     try {
-        let response = await fetch(baseUrl + '/auction/getAllAuctions?createdByUserId=' + userData.userId, options);
+        let response = await fetch(baseUrl + '/auction/getMyPurchases', options);
         let jsonResponse = await response.json();
 
         console.log(jsonResponse);
@@ -23,7 +23,7 @@ const getMyPurchases = async () => {
     }
 };
 
-let getAuctionCategories = async () => {
+const getAuctionCategories = async () => {
     let options = {
         headers: {'Content-Type': 'application/json'},
         method: 'GET'
@@ -38,17 +38,35 @@ let getAuctionCategories = async () => {
         console.log(err);
         return null;
     }
+};
 
+const makePayment = async auctionId => {
+    let options = {
+        headers: {'Content-Type': 'application/json'},
+        method: 'GET'
+    };
+    try {
+        let response = await fetch(baseUrl + '/auction/makingPayment?auctionId=' + auctionId, options);
+        let jsonResponse = await response.json();
+        console.log(jsonResponse);
+
+        return jsonResponse.data;
+    } catch (err) {
+        console.log(err);
+        return null;
+    }
 };
 
 let viewMyPurchases = purchases => {
     purchases.map((element, index) => {
+        let auction_id = 'auction' + element.auctionId;
         let elem = '<div class="column is-4">\n' +
             '                                    <div class="flat-card order-card has-popover-top">\n' +
             '\n' +
             '                                        <div class="order-info">\n' +
             '                                            <span style="font-family: \'Raleway\', sans-serif;font-weight: 600;font-size: .9rem;">' + element.title + '</span>\n' +
-            '                                            <span class="tag is-success">Amount paid</span>\n' +
+            '                                            <div id="' + auction_id + '">' +
+            '                                            </div>\n' +
             '                                        </div>\n' +
             '                                        <div style="margin-top: -20px">\n' +
             '                                            <img style="display: block; margin-left: auto; margin-right: auto" src="assets/images/products/office7.gif" width="180" height="100" >\n' +
@@ -92,6 +110,29 @@ let viewMyPurchases = purchases => {
             '                                    </div>\n' +
             '                                </div>';
         $('#my-purchases').append(elem);
+        let pending = '<span id="pay-amount' + auction_id +  '" class="tag is-warning">Pay amount</span>';
+        let generateInvoice = '<span class="tag is-success"><a style="color: whitesmoke;font-size: 12px" href="invoice.html?auctionId=' + element.auctionId + '">Generate Invoice</a></span>';
+        if(element.hasPaid === 0) {
+            $('#' + auction_id).append(pending);
+            let payId = 'pay-amount' + auction_id;
+            $('#' + payId).click(() => {
+                $('#pay-amount').attr('value', element.maxBid);
+                $('#add-modal-pay-now').toggleClass('is-active', true);
+            });
+            $('#cancel-pay-amount').click(() => {
+                $('#add-modal-pay-now').toggleClass('is-active', false);
+            });
+            $('#confirm-pay-amount').click(() => {
+                makePayment(element.maxBid).then((response) => {
+                    
+                }).catch(err => {
+                    console.log(err);
+                });
+            });
+        }
+        else if(element.hasPaid === 1) {
+            $('#' + auction_id).append(generateInvoice);
+        }
     });
 };
 
