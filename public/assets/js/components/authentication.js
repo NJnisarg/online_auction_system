@@ -79,12 +79,15 @@ const login = async () => {
             localStorage.removeItem("userData");
             localStorage.setItem("userData", JSON.stringify(localData));
             iziToast.show({
+                timeout: 1500,
                 title: 'Success',
                 message: message,
                 titleColor: 'black',
-                backgroundColor: 'yellow'
+                backgroundColor: 'green',
+                onClosing: () => {
+                    window.location = "home.html"
+                }
             });
-            window.location = "home.html";
         }
         else if(message === "Passwords do not match" && error===null) {
             iziToast.show({
@@ -159,12 +162,15 @@ const register = async () => {
             localStorage.removeItem("userData");
             localStorage.setItem("userData", JSON.stringify(localData));
             iziToast.show({
+                timeout: 1500,
                 title: 'Success',
                 message: response.message,
                 titleColor: 'black',
-                backgroundColor: 'yellow'
+                backgroundColor: 'green',
+                onClosing: () => {
+                    window.location = "home.html"
+                }
             });
-            window.location = "home.html";
         }
     }
 

@@ -41,7 +41,7 @@ let viewProfile = profile => {
         '            <div class="profile-footer has-text-centered">\n' +
         '                <span class="achievement-title">Wallet</span>\n' +
         '                <div class="count">\n' +
-        '                    &#8377 500,000\n' +
+        '                    &#8377 ' + profile[0].wallet +
         '                </div>\n' +
         '            </div>\n' +
         '        </div>\n' +
@@ -91,8 +91,8 @@ let viewProfile = profile => {
         '                        </div>\n' +
         '\n' +
         '                        <div class="info-block">\n' +
-        '                            <span class="label-text">Date of Birth</span>\n' +
-        '                            <span class="label-value">' + profile[0].dob + '</span>\n' +
+        '                            <span class="label-text">Age</span>\n' +
+        '                            <span class="label-value">' + profile[0].age + '</span>\n' +
         '                        </div>\n' +
         '                    </div>\n' +
         '                </div>\n' +
@@ -117,25 +117,25 @@ let viewProfile = profile => {
         '                <div class="columns">\n' +
         '                    <div class="column is-6">\n' +
         '                        <div class="info-block">\n' +
-        '                            <span class="label-text">Number</span>\n' +
-        '                            <span class="label-value">23, Block C2</span>\n' +
+        '                            <span class="label-text">House Number</span>\n' +
+        '                            <span class="label-value">' + profile[0].houseNo + '</span>\n' +
         '                        </div>\n' +
         '\n' +
         '                        <div class="info-block">\n' +
         '                            <span class="label-text">State</span>\n' +
-        '                            <span class="label-value">CA</span>\n' +
+        '                            <span class="label-value">' + profile[0].state + '</span>\n' +
         '                        </div>\n' +
         '                    </div>\n' +
         '\n' +
         '                    <div class="column is-6">\n' +
         '                        <div class="info-block">\n' +
         '                            <span class="label-text">Street</span>\n' +
-        '                            <span class="label-value">Church Street</span>\n' +
+        '                            <span class="label-value">' + profile[0].street + '</span>\n' +
         '                        </div>\n' +
         '\n' +
         '                        <div class="info-block">\n' +
         '                            <span class="label-text">Country</span>\n' +
-        '                            <span class="label-value">United States</span>\n' +
+        '                            <span class="label-value">' + profile[0].country + '</span>\n' +
         '                        </div>\n' +
         '                    </div>\n' +
         '                </div>\n' +

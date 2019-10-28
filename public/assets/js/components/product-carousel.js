@@ -65,7 +65,7 @@ let bid = async(auctionId, bidAmt) => {
             iziToast.show({
                 title: 'Error',
                 message: jsonResponse.message,
-                titleColor: 'Red',
+                titleColor: 'black',
                 backgroundColor: 'yellow'
             });
         }
@@ -192,7 +192,7 @@ $(document).ready(() => {
                 iziToast.show({
                     title: 'Error',
                     message: 'The Current Bid value is higher than your Bid. Please raise the Bid',
-                    titleColor: 'Red',
+                    titleColor: 'black',
                     backgroundColor: 'yellow'
                 });
             }
@@ -215,7 +215,7 @@ $(document).ready(() => {
                     iziToast.show({
                         title: 'Error',
                         message: err,
-                        titleColor: 'Red',
+                        titleColor: 'black',
                         backgroundColor: 'yellow'
                     });
                 });

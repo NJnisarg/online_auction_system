@@ -93,7 +93,7 @@ let viewEditProfile = profile => {
         '                                                    <div class="info-block">\n' +
         '                                                        <div id="edit-wallet" class="username has-text-centered">Wallet</div>\n' +
         '                                                        <div class="control">\n' +
-        '                                                            <input type="number" class="input is-default" value="2300">\n' +
+        '                                                            <input type="number" class="input is-default" value="' + profile[0].wallet + '">\n' +
         '                                                        </div>\n' +
         '                                                    </div>\n' +
         '                                                </div>\n' +
@@ -151,9 +151,9 @@ let viewEditProfile = profile => {
         '                                                    </div>\n' +
         '\n' +
         '                                                    <div class="info-block">\n' +
-        '                                                        <span class="label-text">Date Of Birth</span>\n' +
+        '                                                        <span class="label-text">Age</span>\n' +
         '                                                        <div class="control">\n' +
-        '                                                            <input id="edit-dob" type="date" class="input is-default" value="' + profile[0].dob + '">\n' +
+        '                                                            <input id="edit-age" type="number" class="input is-default" value="' + profile[0].age + '">\n' +
         '                                                        </div>\n' +
         '                                                    </div>\n' +
         '                                                </div>\n' +
@@ -175,14 +175,14 @@ let viewEditProfile = profile => {
         '                                                    <div class="info-block">\n' +
         '                                                        <span class="label-text">House Number</span>\n' +
         '                                                        <div class="control">\n' +
-        '                                                            <input id="edit-house-no" type="text" class="input is-default" value="23, Block C2">\n' +
+        '                                                            <input id="edit-house-no" type="text" class="input is-default" value="' + profile[0].houseNo + '">\n' +
         '                                                        </div>\n' +
         '                                                    </div>\n' +
         '                                                    <!-- Form group -->\n' +
         '                                                    <div class="info-block">\n' +
         '                                                        <span class="label-text">City</span>\n' +
         '                                                        <div class="control">\n' +
-        '                                                            <input id="edit-city" type="text" class="input is-default" value="Los Angeles">\n' +
+        '                                                            <input id="edit-city" type="text" class="input is-default" value="' + profile[0].city + '">\n' +
         '                                                        </div>\n' +
         '                                                    </div>\n' +
         '                                                </div>\n' +
@@ -192,14 +192,14 @@ let viewEditProfile = profile => {
         '                                                    <div class="info-block">\n' +
         '                                                        <span class="label-text">Street</span>\n' +
         '                                                        <div class="control">\n' +
-        '                                                            <input id="edit-street" type="text" class="input is-default" value="' + profile[0].address + '">\n' +
+        '                                                            <input id="edit-street" type="text" class="input is-default" value="' + profile[0].street + '">\n' +
         '                                                        </div>\n' +
         '                                                    </div>\n' +
         '                                                    <!-- Form group -->\n' +
         '                                                    <div class="info-block">\n' +
         '                                                        <span class="label-text">Country</span>\n' +
         '                                                        <div class="control">\n' +
-        '                                                            <input id="edit-country" type="text" class="input is-default" value="INDIA">\n' +
+        '                                                            <input id="edit-country" type="text" class="input is-default" value="' + profile[0].country + '">\n' +
         '                                                        </div>\n' +
         '                                                    </div>\n' +
         '                                                </div>\n' +
@@ -220,9 +220,8 @@ const edit = async () => {
     let editRequest = {
         name: $("#edit-first-name").val() + " " + $("#edit-last-name").val(),
         emailId: $("#edit-emailId").val(),
-        phoneNo: $("#edit-phone-no").val(),
         sex: $("#edit-sex").val(),
-        dob: $("#edit-dob").val(),
+        age: $("#edit-age").val(),
         houseNo: $("#edit-house-no").val(),
         street: $("#edit-street").val(),
         city: $("#edit-city").val(),

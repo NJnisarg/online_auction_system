@@ -99,7 +99,7 @@ let viewMyAuctions = auctions => {
             '                                                        <span>' + element.description + '</span>\n' +
             '                                                    </span>\n' +
             '                                                    <div class="action">' +
-            '                                                        <span style="color: #0023FF"> Starting Bid:' + element.startingBid + '</span>\n' +
+            '                                                        <span style="color: #0023FF"> Starting Bid: &#8377 ' + element.startingBid + '</span>\n' +
                                                                 '</div>\n' +
                                                                 '<div class="action delete-auction" data-auctionId = "' + element.auctionId + '">' +
             '                                                           <button class="button is-danger raised">Cancel</button>'
