@@ -49,8 +49,8 @@ const editUserProfile = async (editRequest) => {
 };
 
 let viewEditProfile = profile => {
-    let first_name = profile[0].name;
-    let last_name = profile[0].name;
+    let first_name = profile[0].name.split(' ')[0];
+    let last_name = profile[0].name.split(' ')[1];
     let profileEditDetail = '<div class="column is-4">\n' +
         '                                    <!-- Upload Avatar -->\n' +
         '                                    <div class="flat-card upload-card is-auto">\n' +
@@ -91,9 +91,9 @@ let viewEditProfile = profile => {
         '                                                <div class="column is-12">\n' +
         '                                                    <!-- Form group -->\n' +
         '                                                    <div class="info-block">\n' +
-        '                                                        <div id="edit-wallet" class="username has-text-centered">Wallet</div>\n' +
+        '                                                        <div class="username has-text-centered">Wallet</div>\n' +
         '                                                        <div class="control">\n' +
-        '                                                            <input type="number" class="input is-default" value="' + profile[0].wallet + '">\n' +
+        '                                                            <input id="edit-wallet" type="number" class="input is-default" value="' + profile[0].wallet + '">\n' +
         '                                                        </div>\n' +
         '                                                    </div>\n' +
         '                                                </div>\n' +
@@ -226,7 +226,7 @@ const edit = async () => {
         street: $("#edit-street").val(),
         city: $("#edit-city").val(),
         country: $("#edit-country").val(),
-        wallet: $("#edit-wallet").val()
+        wallet: parseFloat($("#edit-wallet").val())
     };
     console.log(editRequest);
 
@@ -234,8 +234,16 @@ const edit = async () => {
 
     console.log(response);
     if(response.message === "Profile Updated Successfully") {
-        alert(response.message);
-        window.location = "account.html";
+        iziToast.show({
+            timeout: 1500,
+            title: 'Success',
+            message: response.message,
+            titleColor: 'black',
+            backgroundColor: 'green',
+            onClosing: () => {
+                window.location = "account.html"
+            }
+        });
     }
 };
 

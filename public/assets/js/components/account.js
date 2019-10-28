@@ -24,8 +24,8 @@ const getUserProfile = async () => {
 };
 
 let viewProfile = profile => {
-    let first_name = profile[0].name;
-    let last_name = profile[0].name;
+    let first_name = profile[0].name.split(' ')[0];
+    let last_name = profile[0].name.split(' ')[1];
     let profileDetails = '<div class="column is-5">\n' +
         '        <!-- User card -->\n' +
         '        <div class="flat-card profile-card is-auto">\n' +
@@ -122,8 +122,8 @@ let viewProfile = profile => {
         '                        </div>\n' +
         '\n' +
         '                        <div class="info-block">\n' +
-        '                            <span class="label-text">State</span>\n' +
-        '                            <span class="label-value">' + profile[0].state + '</span>\n' +
+        '                            <span class="label-text">City</span>\n' +
+        '                            <span class="label-value">' + profile[0].city + '</span>\n' +
         '                        </div>\n' +
         '                    </div>\n' +
         '\n' +
