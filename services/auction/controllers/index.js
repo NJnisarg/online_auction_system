@@ -78,6 +78,17 @@ const bid = async (req,res) => {
     }
 };
 
+const pay = async (req,res) => {
+    try{
+        let result = await db.pay(req.query);
+        console.log(result);
+        response(res,null,"Successfully paid on the auction", result[0], 200);
+    }catch(err){
+        console.log(err);
+        response(res, err, "Error. Could not pay", null, 500);
+    }
+};
+
 const getMyBids = async (req,res) => {
     try{
         let result = await db.getMyBids(req.query);
@@ -132,6 +143,7 @@ module.exports = {
     deleteAuction,
     getAuctionCategories,
     bid,
+    pay,
     getMyBids,
     getMyPurchases,
     getInvoice,
