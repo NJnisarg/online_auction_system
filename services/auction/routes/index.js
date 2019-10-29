@@ -11,6 +11,7 @@ router.put('/updateAuction', AuthorizationMiddleware, controllers.updateAuction)
 router.post('/deleteAuction', AuthorizationMiddleware, controllers.deleteAuction);
 router.get('/getAuctionCategories', controllers.getAuctionCategories);
 router.post('/bid', AuthorizationMiddleware, controllers.bid);
+router.get('/pay', AuthorizationMiddleware, controllers.pay);
 router.get('/getMyBids', AuthorizationMiddleware, controllers.getMyBids);
 router.get('/getMyPurchases', AuthorizationMiddleware, controllers.getMyPurchases);
 router.get('/getInvoice', AuthorizationMiddleware, controllers.getInvoice);

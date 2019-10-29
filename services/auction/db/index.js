@@ -137,6 +137,23 @@ const bid = async(options) => {
     });
 };
 
+const pay = async(options) => {
+    return new Promise((resolve, reject) => {
+        conn.query({
+                sql: 'call Pay(?,?)'
+            },
+            [options.auctionId, options.userId],
+            (error, results, fields) => {
+                if(error)
+                {
+                    reject( "Pay: Error in paying for the auction" + error);
+                }
+                resolve(results);
+            }
+        );
+    });
+};
+
 const getMyBids = async(options) => {
     return new Promise((resolve, reject) => {
         conn.query({
@@ -197,6 +214,7 @@ module.exports = {
     deleteAuction,
     getAuctionCategories,
     bid,
+    pay,
     getMyBids,
     getMyPurchases,
     getInvoice,
