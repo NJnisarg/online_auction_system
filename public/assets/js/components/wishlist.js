@@ -12,7 +12,7 @@ const getMyAuctions = async () => {
     };
 
     try {
-        let response = await fetch(baseUrl + '/auction/getAllAuctions?createdByUserId=' + userData.userId, options);
+        let response = await fetch(baseUrl + '/auction/getMyAuctions?createdByUserId=' + userData.userId, options);
         let jsonResponse = await response.json();
 
         console.log(jsonResponse);

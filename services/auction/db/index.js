@@ -29,6 +29,7 @@ const getMyAuctions = async (options) => {
             {
                 reject("GETMYAUCTIONS: Error fetching the data");
             }
+            resolve(results);
         })
     })
 };

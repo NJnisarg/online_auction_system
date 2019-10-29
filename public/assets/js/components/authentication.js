@@ -105,7 +105,7 @@ const login = async () => {
                 titleColor: 'black',
                 backgroundColor: 'green',
                 onClosing: () => {
-                    // window.location = "home.html"
+                    window.location = "home.html"
                 }
             });
         }
