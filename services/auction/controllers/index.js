@@ -12,6 +12,17 @@ const getAllAuctions = async (req, res) => {
     }
 };
 
+const getMyAuctions = async (req, res) => {
+    try{
+        let result = await db.getMyAuctions(req.query);
+        console.log(result);
+        response(res, null, "Successfully retrieved my auctions", result[0], 200);
+    } catch (err) {
+        console.log(err);
+        response(res, err, "Error in retrieving my auctions", null, 404);
+    }
+};
+
 const getAuction = async (req,res) => {
     try{
         let result = await db.getAuction(req.query);
@@ -125,7 +136,8 @@ const getMyPurchases = async (req,res) => {
 };
 
 module.exports = {
-    getAllAuctions, 
+    getAllAuctions,
+    getMyAuctions,
     getAuction,
     createAuction,
     updateAuction,

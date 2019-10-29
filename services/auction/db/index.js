@@ -17,6 +17,22 @@ const getAllAuctions = async (options) => {
     })
 };
 
+const getMyAuctions = async (options) => {
+    let {createdByUserId, categoryId, status} = options;
+    return new Promise((resolve, reject) => {
+        conn.query({
+            sql: 'call GetMyAuctions(?,?,?)'
+        },
+        [createdByUserId, categoryId, status],
+        (error, results, fields) => {
+            if(error)
+            {
+                reject("GETMYAUCTIONS: Error fetching the data");
+            }
+        })
+    })
+};
+
 const getAuction = async (options) => {
     return new Promise((resolve,reject) => {
 
@@ -174,6 +190,7 @@ const getMyPurchases = async(options) => {
 
 module.exports = {
     getAllAuctions,
+    getMyAuctions,
     getAuction,
     createAuction,
     updateAuction,

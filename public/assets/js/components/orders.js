@@ -41,12 +41,17 @@ const getAuctionCategories = async () => {
 };
 
 const makePayment = async auctionId => {
+    let userData = localStorage.getItem('userData');
+    userData = JSON.parse(userData);
     let options = {
-        headers: {'Content-Type': 'application/json'},
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'token ' + userData.userId
+        },
         method: 'GET'
     };
     try {
-        let response = await fetch(baseUrl + '/auction/makingPayment?auctionId=' + auctionId, options);
+        let response = await fetch(baseUrl + '/auction/pay?auctionId=' + auctionId, options);
         let jsonResponse = await response.json();
         console.log(jsonResponse);
 
@@ -91,7 +96,7 @@ let viewMyPurchases = purchases => {
                 $('#add-modal-pay-now').toggleClass('is-active', false);
             });
             $('#confirm-pay-amount').click(() => {
-                makePayment(element.maxBid).then((response) => {
+                makePayment(element.auctionId).then((response) => {
                     
                 }).catch(err => {
                     console.log(err);
