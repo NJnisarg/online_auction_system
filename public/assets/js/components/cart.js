@@ -48,7 +48,7 @@ let viewMyBiddings = biddings => {
             '                                    <div class="flat-card is-auto cart-card">\n' +
             '                                        <ul class="cart-content">\n' +
             '                                            <li>\n' +
-            '                                                <img src="assets/images/products/office6.png" alt="">\n' +
+            '                                                <img src="' + element.imgUrl +'" alt="">\n' +
             '                                                <span class="product-info">\n' +
             '                                                    <span>' + element.title + '</span>\n' +
             '                                                    <span>' + element.categoryName + '</span>\n' +

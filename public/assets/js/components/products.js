@@ -100,13 +100,13 @@ let generateProductContainer = async (categoryId,categoryName) => {
         products += ('<a href="product-carousel.html?auctionId=' + elem.auctionId + '"  ><div class="column is-6" id="' + elem.auctionId + '">\n' +
             '                                    <div class="flat-card is-long">\n' +
             '                                        <div class="left-image is-md">\n' +
-            '                                            <img src="assets/images/products/house2.jpg" alt="">\n' +
+            '                                            <img src="' + elem.imgUrl +'" alt="">\n' +
             '                                        </div>\n' +
             '                                        <div class="product-info">\n' +
-            '                                            <a href="product.html"><h3 class="product-name featured-md">' + elem.title +'</h3></a>\n' +
+            '                                            <a href="product-carousel.html?auctionId=' + elem.auctionId + '"><h3 class="product-name featured-md">' + elem.title +'</h3></a>\n' +
             '                                            <p class="product-description">' + elem.description + '</p>\n' +
-            '                                            <p class="product-price">\n' +
-            '                                                ' + elem.startingBid +'\n' +
+            '                                            <p style="color: #0023ff; margin-top:10px;">\n' +
+            '                                                Starting Bid: &#8377 ' + elem.startingBid +'\n' +
             '                                            </p>\n' +
             '                                        </div>\n' +
             '        \n' +

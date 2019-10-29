@@ -91,57 +91,60 @@ const deleteAuction = async data => {
 
 let viewMyAuctions = auctions => {
     auctions.map((element, index) => {
-        let elem = '<li id="'+ element.auctionId + '" class="wishlist-item">\n' +
+    let elem = '                                        <li id="'+ element.auctionId + '" class="wishlist-item">\n' +
             '                                                <div class="item-wrapper">\n' +
-            '                                                    <img src="assets/images/products/office7.gif" alt="">\n' +
+                                                                '<a href="product-carousel.html?auctionId='+ element.auctionId +'">' +
+            '                                                    <img src="' + element.imgUrl +'" alt="">\n' +
             '                                                    <span class="product-info">\n' +
             '                                                        <span>' + element.title + '</span>\n' +
             '                                                        <span>' + element.description + '</span>\n' +
             '                                                    </span>\n' +
+            '                                                    </a>' +
             '                                                    <div class="action">' +
             '                                                        <span style="color: #0023FF"> Starting Bid: &#8377 ' + element.startingBid + '</span>\n' +
                                                                 '</div>\n' +
-                                                                '<div class="action delete-auction" data-auctionId = "' + element.auctionId + '">' +
+                                                                '<div class="action delete-auction-' + element.auctionId +'" data-auctionId = "' + element.auctionId + '">' +
             '                                                           <button class="button is-danger raised">Cancel</button>'
             +                                                    '</div>\n' +
             '                                                </div>\n' +
             '                                            </li>';
         $("#my-auctions").append(elem);
-    });
-    $('.delete-auction').click(() => {
-        let auctionId = $('.delete-auction').data("auctionid");
-        console.log(auctionId);
-        deleteAuction({auctionId}).then(res => {
-            if(res!==null)
-            {
-                iziToast.show({
-                    title: 'Success',
-                    message: 'Auction Deleted Successfully',
-                    titleColor: 'green',
-                    messageColor: 'green',
-                    backgroundColor: 'black'
-                });
+        $('.delete-auction-'+ element.auctionId).click(() => {
+            let auctionId = $('.delete-auction-' + element.auctionId).data("auctionid");
+            console.log(auctionId);
+            deleteAuction({auctionId}).then(res => {
+                if(res!==null)
+                {
+                    iziToast.show({
+                        title: 'Success',
+                        message: 'Auction Deleted Successfully',
+                        titleColor: 'green',
+                        messageColor: 'green',
+                        backgroundColor: 'black'
+                    });
 
-                window.location.reload();
-            }else {
+                    window.location.reload();
+                }else {
+                    iziToast.show({
+                        title: 'Error',
+                        message: 'Error in deleting the auction',
+                        titleColor: 'Red',
+                        messageColor: 'Red',
+                        backgroundColor: 'yellow'
+                    });
+                }
+            }).catch(err => {
                 iziToast.show({
-                    title: 'Error',
-                    message: 'Error in deleting the auction',
+                    title: 'Error 2',
+                    message: err,
                     titleColor: 'Red',
                     messageColor: 'Red',
                     backgroundColor: 'yellow'
                 });
-            }
-        }).catch(err => {
-            iziToast.show({
-                title: 'Error 2',
-                message: err,
-                titleColor: 'Red',
-                messageColor: 'Red',
-                backgroundColor: 'yellow'
             });
         });
     });
+
 };
 
 let viewModalCategories = categories => {
@@ -263,8 +266,15 @@ $(document).ready( () => {
             window.location = 'authentication.html'
         }
         else {
+            let imgUrl = "assets/images/backend/auction_placeholder.jpg";
+            try{
+                imgUrl = "assets/images/backend/" + document.getElementById("imageUpload").files[0].name
+            }catch(err){
+                imgUrl = "assets/images/backend/auction_placeholder.jpg";
+            }
             let category = document.getElementById('auction-category');
             let categoryId = category.options[category.selectedIndex].value;
+            userData = JSON.parse(userData);
             let data = {
                 userId: userData.userId,
                 title: $('#auction-title').val(),
@@ -273,8 +283,23 @@ $(document).ready( () => {
                 endDate: $('#auction-end-date').val(),
                 categoryId: parseInt(categoryId),
                 startingBid: $('#auction-starting-bid').val(),
-                imgUrl: "assets/images/backend/" + document.getElementById("imageUpload").files[0].name
+                imgUrl: imgUrl
             };
+
+            console.log(data);
+
+            if(!(data.userId && data.title && data.description && data.startDate && data.endDate && data.categoryId && data.startingBid && data.imgUrl))
+            {
+                iziToast.show({
+                    title: 'Error',
+                    message: 'All the fields must be filled!',
+                    titleColor: 'black',
+                    messageColor: 'black',
+                    backgroundColor: 'yellow'
+                });
+
+                return;
+            }
 
             createAuction(data).then( response => {
                 if(response !== null) {

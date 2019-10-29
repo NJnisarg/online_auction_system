@@ -60,7 +60,7 @@
                     <a href="javascript:void(0);" id="open-shop"><i data-feather="home"></i></a>
                 </li>            <!-- Cart sidebar trigger -->
                 <li>
-                    <a href="open-cart" id="open-cart"><i data-feather="shopping-cart"></i></a>
+                    <a href="cart.html" id="open-cart"><i data-feather="shopping-cart"></i></a>
                 </li>            <!-- Mobile mode trigger -->
                 <li class="is-hidden-desktop is-hidden-tablet">
                     <a href="javascript:void(0);" id="mobile-mode"><i data-feather="smartphone"></i></a>
@@ -169,15 +169,7 @@
                     <div class="is-carousel">
                         <!-- Product Image -->
                         <div>
-                            <img src="assets/images/products/red-seat.png" data-action="zoom" alt="">
-                        </div>
-                        <!-- Product Image -->
-                        <div>
-                            <img src="assets/images/products/red-seat.jpg" data-action="zoom" alt="">
-                        </div>
-                        <!-- Product Image -->
-                        <div>
-                            <img src="assets/images/products/red-seat2.png" data-action="zoom" alt="">
+                            <img src="" data-action="zoom" alt="" id="productImage">
                         </div>
                     </div>
                 </div>
@@ -279,7 +271,8 @@
                                         <rect x="106.667" y="170.667" width="256" height="21.333"/>
                                     </g>
                                 </g>
-                            </svg>                    <h2 id="categoryTitle">Office</h2>
+                            </svg>
+                            <h2 id="categoryTitle">Office</h2>
                         </div>
                     </div>
                     <!-- Panel body -->
@@ -293,7 +286,7 @@
                             <!-- Price -->
                             <div class="product-price">
                                 <div class="heading">Current Bid</div>
-                                <div class="value" id="currentBid">$65,00</div>
+                                <div style="font-size: 1.6rem; font-weight: 700; color: #0023ff;">&#8377 <span id="currentBid"></span></div>
                             </div>
                             <!-- Add to Cart -->
                             <div class="add-to-cart" id="bid">
@@ -310,10 +303,10 @@
                                     </header>
                                     <section class="modal-card-body">
                                         <div>
-                                            <img src="assets/images/products/red-seat.jpg" height="200px" width="200px" style="float:left;">
+                                            <img src="" height="200px" width="200px" style="float:left;" id="modalProductImage">
                                             <p style="padding:20px" id="modalProductDescription"></p>
                                             <p>
-                                                <input class="input is-rounded" type="text" id="bidAmt" placeholder="Bid Amount:">
+                                                <input class="input is-rounded" type="number" id="bidAmt" placeholder="Bid Amount:">
                                             </p>
                                         </div>
                                     </section>

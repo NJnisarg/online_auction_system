@@ -49,7 +49,7 @@ let viewProfile = profile => {
         '        <div class="flat-card profile-card is-auto">\n' +
         '            <div class="card-body">\n' +
         '                <div class="profile-image">\n' +
-        '                    <img src="assets/images/avatars/elie.jpg" alt="">\n' +
+        '                    <img src="'+ profile[0].imgUrl +'" alt="">\n' +
         '                </div>\n' +
         '                <div class="username has-text-centered">\n' +
         '                    <span>' + profile[0].name + '</span>\n' +

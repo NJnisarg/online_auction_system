@@ -57,9 +57,9 @@ const getProfile = async(options) => {
 const updateProfile = async(options) => {
     return new Promise((resolve, reject) => {
         conn.query({
-            sql: 'call UpdateProfile(?,?,?,?,?,?,?,?,?,?)'
+            sql: 'call UpdateProfile(?,?,?,?,?,?,?,?,?,?,?)'
         },
-        [options.userId, options.name, options.emailId, options.sex, options.age, options.houseNo, options.street, options.city, options.country, options.wallet],
+        [options.userId, options.name, options.emailId, options.sex, options.age, options.houseNo, options.street, options.city, options.country, options.wallet, options.imgUrl],
         (error, results, fields) => {
             if(error)
             {

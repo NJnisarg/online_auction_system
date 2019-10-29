@@ -81,7 +81,7 @@ let generateCenterCategories = async () => {
     categories.map((elem,index) => {
         console.log(index);
         if((index+1)%3!==0){
-            child[index%3] =' <article class="tile is-child has-min-height has-background-image" data-background="assets/images/bg/house.jpeg" onClick="return true">\n' +
+            child[index%3] ='<a href="products.html"> <article class="tile is-child has-min-height has-background-image" data-background="assets/images/bg/house.jpeg" onClick="return true">\n' +
             '                                            <div class="tile-content">\n' +
             '                                                <h2 class="shop-category">' + elem.title + '</h2>\n' +
             '                                                <div class="divider"></div>\n' +
@@ -97,10 +97,10 @@ let generateCenterCategories = async () => {
             '                                            </div>\n' +
             '                                            <!-- Overlay -->\n' +
             '                                            <div class="tile-overlay"></div>\n' +
-            '                                        </article> ';
+            '                                        </article></a> ';
         }
         else{
-            child[index%3] =' <article class="tile is-child has-min-height has-background-image" data-background="assets/images/bg/house.jpeg" onClick="return true">\n' +
+            child[index%3] =' <a href="products.html"><article class="tile is-child has-min-height has-background-image" data-background="assets/images/bg/house.jpeg" onClick="return true">\n' +
                 '                                            <div class="tile-content">\n' +
                 '                                                <h2 class="shop-category">' + elem.title + '</h2>\n' +
                 '                                                <div class="divider"></div>\n' +
@@ -116,7 +116,7 @@ let generateCenterCategories = async () => {
                 '                                            </div>\n' +
                 '                                            <!-- Overlay -->\n' +
                 '                                            <div class="tile-overlay"></div>\n' +
-                '                                        </article> ';
+                '                                        </article> </a>';
             parentTile = '<div class="tile is-parent is-12" style="height:200px;">\n' + child[0] + child[1] + child[2] + '</div>';
             $('#centerCategoriesTile').append(parentTile);
             child[0] = null;

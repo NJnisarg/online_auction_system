@@ -60,55 +60,23 @@ const makePayment = async auctionId => {
 let viewMyPurchases = purchases => {
     purchases.map((element, index) => {
         let auction_id = 'auction' + element.auctionId;
-        let elem = '<div class="column is-4">\n' +
-            '                                    <div class="flat-card order-card has-popover-top">\n' +
-            '\n' +
-            '                                        <div class="order-info">\n' +
-            '                                            <span style="font-family: \'Raleway\', sans-serif;font-weight: 600;font-size: .9rem;">' + element.title + '</span>\n' +
-            '                                            <div id="' + auction_id + '">' +
-            '                                            </div>\n' +
-            '                                        </div>\n' +
-            '                                        <div style="margin-top: -20px">\n' +
-            '                                            <img style="display: block; margin-left: auto; margin-right: auto" src="assets/images/products/office7.gif" width="180" height="100" >\n' +
-            '                                        </div>\n' +
-            '                                        <div class="order-info">\n' +
-            '                                            <span style="font-size: 75%;font-weight: 500;text-transform: uppercase;color: #828282;">' + element.description + '</span>\n' +
-            '                                        </div>\n' +
-            '\n' +
-            '                                    </div>\n' +
-            '        \n' +
-            '                                    <!-- Order 46895 Popover -->\n' +
-            '                                    <div class="webui-popover-content">\n' +
-            '                                        <!-- Popover Block -->\n' +
-            '                                        <div class="popover-flex-block">\n' +
-            '                                            <img class="staff-avatar" src="assets/images/avatars/janet.jpg" alt="">\n' +
-            '                                            <div class="content-block">\n' +
-            '                                                <label>Product Sold by</label>\n' +
-            '                                                <span>Jane Smith</span>\n' +
-            '                                            </div>\n' +
-            '                                        </div>\n' +
-            '                                        <!-- Popover Block -->\n' +
-            '                                        <div class="popover-flex-block">\n' +
-            '                                            <div class="icon-block">\n' +
-            '                                                <i data-feather="clock"></i>\n' +
-            '                                            </div>\n' +
-            '                                            <div class="content-block">\n' +
-            '                                                <label>Sold date</label>\n' +
-            '                                                <span>mar 23th 2018</span>\n' +
-            '                                            </div>\n' +
-            '                                        </div>\n' +
-            '                                        <!-- Popover Block -->\n' +
-            '                                        <div class="popover-flex-block">\n' +
-            '                                            <div class="icon-block">\n' +
-            '                                                <i data-feather="dollar-sign"></i>\n' +
-            '                                            </div>\n' +
-            '                                            <div class="content-block">\n' +
-            '                                                <label>Bidding Amount</label>\n' +
-            '                                                <span>378,85</span>\n' +
-            '                                            </div>\n' +
-            '                                        </div>\n' +
-            '                                    </div>\n' +
-            '                                </div>';
+        let elem = '                                <div class="column is-4">\n' +
+                    '                                    <div class="flat-card order-card has-popover-top">\n' +
+                    '\n' +
+                    '                                        <div class="order-info">\n' +
+                    '                                            <span style="font-family: \'Raleway\', sans-serif;font-weight: 600;font-size: .9rem;">' + element.title + '</span>\n' +
+                    '                                            <div id="' + auction_id + '">' +
+                    '                                            </div>\n' +
+                    '                                        </div>\n' +
+                    '                                        <div style="margin-top: -20px">\n' +
+                    '                                            <img style="display: block; margin-left: auto; margin-right: auto" src="' + element.imgUrl + '" width="112px" height="112px" >\n' +
+                    '                                        </div>\n' +
+                    '                                        <div class="order-info">\n' +
+                    '                                            <span style="font-size: 75%;font-weight: 500;color: #828282;">' + element.description + '</span>\n' +
+                    '                                        </div>\n' +
+                    '\n' +
+                    '                                    </div>\n' +
+                    '                                 </div>\n';
         $('#my-purchases').append(elem);
         let pending = '<span id="pay-amount' + auction_id +  '" class="tag is-warning">Pay amount</span>';
         let generateInvoice = '<span class="tag is-success"><a style="color: whitesmoke;font-size: 12px" href="invoice.html?auctionId=' + element.auctionId + '">Generate Invoice</a></span>';

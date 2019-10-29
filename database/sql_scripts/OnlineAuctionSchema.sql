@@ -21,9 +21,9 @@ begin
 		auctionId int primary key auto_increment,
         userId int not null,
         title varchar(256) not null,
-        imgUrl varchar(512),
+        imgUrl varchar(512) default 'assets/images/backend/auction_placeholder.jpg',
         status int default 1,
-        description varchar(512),
+        description text,
         startDate date,
         endDate date,
         constraint foreign key(userId) references User(userId)
@@ -48,8 +48,8 @@ begin
     create table Product(
 		productId int primary key auto_increment,
         title varchar(256) not null,
-        description varchar(512),
-        imgUrl varchar(512),
+        description text,
+        imgUrl varchar(512) default 'assets/images/backend/auction_placeholder.jpg',
         startingBid decimal default 0,
         currentBid decimal default 0,
         closingBid decimal default 0,
@@ -62,16 +62,16 @@ begin
     create table Profile(
 		id int primary key auto_increment,
         userId int not null unique,
-        name varchar(256),
-        imgUrl varchar(512),
-        houseNo varchar(128),
-        street varchar(128),
-        city varchar(128),
-        country varchar(128),
+        name varchar(256) default 'New User',
+        imgUrl varchar(512) default 'assets/images/backend/profile_placeholder.jpg',
+        houseNo varchar(128) default 'A101',
+        street varchar(128) default 'New Street',
+        city varchar(128) default 'New City',
+        country varchar(128) default 'New Country',
         age int default 18,
         dob date,
         sex varchar(3) default 'M',
-        wallet decimal default 0,
+        wallet decimal default 1000,
 		constraint foreign key(userId) references User(userId)
 
     );

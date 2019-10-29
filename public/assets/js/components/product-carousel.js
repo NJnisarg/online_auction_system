@@ -145,6 +145,8 @@ let generateProductDetails = async(auctionId, auction) => {
     $('#productDescription').text(auction.description);
     $('#modalProductDescription').text(auction.description);
     $('#currentBid').text(auction.currentBid);
+    $('#productImage').attr("src", auction.imgUrl);
+    $('#modalProductImage').attr("src", auction.imgUrl);
 
     return auction;
 
@@ -199,6 +201,7 @@ $(document).ready(() => {
             if(userData===null || userData===undefined)
             {
                 iziToast.show({
+                    timeout: 1500,
                     title: 'Error',
                     message: 'Please Login first to Bid!',
                     titleColor: 'black',
@@ -208,12 +211,25 @@ $(document).ready(() => {
                 return;
             }
 
+            if(JSON.parse(userData).userId === auction.userId)
+            {
+                iziToast.show({
+                    timeout: 1500,
+                    title: 'Error',
+                    message: 'You Cannot Bid on your own Item!',
+                    titleColor: 'black',
+                    backgroundColor: 'yellow'
+                });
+                return;
+            }
+
             let bidVal = $('#bidAmt').val();
             console.log(bidVal);
 
             if(bidVal <= auction.currentBid)
             {
                 iziToast.show({
+                    timeout: 1500,
                     title: 'Error',
                     message: 'The Current Bid value is higher than your Bid. Please raise the Bid',
                     titleColor: 'black',
@@ -226,17 +242,21 @@ $(document).ready(() => {
                     if(done)
                     {
                         iziToast.show({
+                            timeout: 1500,
                             title: 'Success!',
                             message: 'Successfully Placed Bid on the Product',
-                            titleColor: 'Blue',
-                            backgroundColor: 'yellow'
+                            titleColor: 'black',
+                            backgroundColor: 'green',
+                            onClosing: function(){
+                                window.location.reload();
+                            }
                         });
                         $('#bidModal').toggleClass('is-active',false);
-                        generateProductDetails(auctionId);
 
                     }
                 }).catch(err => {
                     iziToast.show({
+                        timeout: 1500,
                         title: 'Error',
                         message: err,
                         titleColor: 'black',

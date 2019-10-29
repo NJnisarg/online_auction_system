@@ -67,10 +67,8 @@ const getAuctionCategories = async () => {
 };
 
 let viewEditProfile = profile => {
-    // let first_name = profile[0].name.split(' ')[0];
-    // let last_name = profile[0].name.split(' ')[1];
-    let first_name = "";
-    let last_name = "";
+    let first_name = profile[0].name.split(' ')[0];
+    let last_name = profile[0].name.split(' ')[1];
     let profileEditDetail = '<div class="column is-4">\n' +
         '                                    <!-- Upload Avatar -->\n' +
         '                                    <div class="flat-card upload-card is-auto">\n' +
@@ -82,7 +80,7 @@ let viewEditProfile = profile => {
         '                                                <label for="imageUpload"></label>\n' +
         '                                            </div>\n' +
         '                                            <div class="avatar-preview">\n' +
-        '                                                <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);">\n' +
+        '                                                <div id="imagePreview" style="background-image: url(' + profile[0].imgUrl + ');">\n' +
         '                                                </div>\n' +
         '                                            </div>\n' +
         '                                        </div>' +

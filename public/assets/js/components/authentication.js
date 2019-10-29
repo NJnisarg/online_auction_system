@@ -72,7 +72,8 @@ const login = async () => {
     let login_email = $("#login-email").val();
     let login_password = $("#login-password").val();
 
-    if(login_email.length === 0 || login_password===0) {
+
+    if(login_email===null || login_password===null || login_email.length === 0 || login_password.length ===0) {
         iziToast.show({
             title: 'Error',
             message: 'Login Password or Email-id cannot be empty',
@@ -135,7 +136,16 @@ const register = async () => {
     let register_password = $("#register-password").val();
     let confirm_password = $("#register-confirm").val();
 
-    if(confirm_password !== register_password) {
+    if(register_username.length===0 || register_password.length===0 || register_email.length===0 || confirm_password.length===0) {
+        iziToast.show({
+            title: 'Error',
+            message: 'Input fields cannot be empty',
+            titleColor: 'black',
+            backgroundColor: 'yellow'
+        });
+    }
+
+    else if(confirm_password !== register_password) {
         iziToast.show({
             title: 'Error',
             message: 'Passwords do not match!!!',
@@ -146,7 +156,7 @@ const register = async () => {
     else if(register_email.includes("@") === false) {
         iziToast.show({
             title: 'Error',
-            message: 'Passwords do not match!!!',
+            message: 'Incorrect email format!',
             titleColor: 'black',
             backgroundColor: 'yellow'
         });
@@ -154,15 +164,7 @@ const register = async () => {
     else if(register_password.length < 8) {
         iziToast.show({
             title: 'Error',
-            message: 'Password should be of size at least 8',
-            titleColor: 'black',
-            backgroundColor: 'yellow'
-        });
-    }
-    else if(register_username.length===0 || register_password.length===0 || register_email.length===0) {
-        iziToast.show({
-            title: 'Error',
-            message: 'Input field cannot be empty',
+            message: 'Password should be of size at least 8!',
             titleColor: 'black',
             backgroundColor: 'yellow'
         });
