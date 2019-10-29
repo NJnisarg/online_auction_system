@@ -53,13 +53,13 @@ let viewMyBiddings = biddings => {
             '                                                    <span>' + element.title + '</span>\n' +
             '                                                    <span>' + element.categoryName + '</span>\n' +
             '                                                </span>\n' +
-            '                                                <span class="product-price">\n' +
-            '                                                    <span>Current Price</span>\n' +
-            '                                                    <span>' + element.currentBid + '</span>\n' +
+            '                                                <span style="margin:20px">\n' +
+            '                                                    <span>Current</span>\n' +
+            '                                                    <span>&#8377 ' + element.currentBid + '</span>\n' +
             '                                                </span>\n' +
-            '                                                <span class="product-price">\n' +
+            '                                                <span>\n' +
             '                                                    <span>My Bid</span>\n' +
-            '                                                    <span>' + element.bidAmt + '</span>\n' +
+            '                                                    <span>&#8377 ' + element.bidAmt + '</span>\n' +
             '                                                </span>\n' +
             '                                            </li>\n' +
             '                                        </ul>\n' +

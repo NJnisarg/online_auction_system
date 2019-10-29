@@ -117,6 +117,9 @@ let viewMyPurchases = purchases => {
                         backgroundColor: 'green',
                         timeout: 1500,
                         onClosing: () => {
+                            let ls = JSON.parse(localStorage.getItem("userData"));
+                            ls.wallet = ls.wallet - element.closingBid;
+                            localStorage.setItem("userData", JSON.stringify(ls));
                             window.location.reload()
                         }
                     });

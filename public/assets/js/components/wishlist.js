@@ -94,12 +94,12 @@ let viewMyAuctions = auctions => {
     let elem = '                                        <li id="'+ element.auctionId + '" class="wishlist-item">\n' +
             '                                                <div class="item-wrapper">\n' +
                                                                 '<a href="product-carousel.html?auctionId='+ element.auctionId +'">' +
-            '                                                    <img src="' + element.imgUrl +'" alt="">\n' +
+            '                                                    <img height="240px" width="240px" src="' + element.imgUrl +'" alt="">\n </a>' +
             '                                                    <span class="product-info">\n' +
             '                                                        <span>' + element.title + '</span>\n' +
             '                                                        <span>' + element.description + '</span>\n' +
             '                                                    </span>\n' +
-            '                                                    </a>' +
+            '                                                    ' +
             '                                                    <div class="action">' +
             '                                                        <span style="color: #0023FF"> Starting Bid: &#8377 ' + element.startingBid + '</span>\n' +
                                                                 '</div>\n' +
