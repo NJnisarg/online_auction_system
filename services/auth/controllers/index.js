@@ -21,7 +21,8 @@ const authenticateUser = async (req, res) => {
                 'userId':user.userId,
                 'username':user.username,
                 'emailId':user.emailId,
-                'token': user.userId
+                'token': user.userId,
+                'wallet': user.wallet
             };
             response(res, null, "User Authenticated Successfully", finalRes, 200);
         }
@@ -52,7 +53,7 @@ const registerUser = async (req, res) => {
         // let token = jwt.sign({id: user.userId}, authConfig.jwtSecret, {expiresIn: 86400});
         let token = user.userId;
 
-        response(res, null,"User Created Successfully", {'userId':user.userId, 'username':user.username, 'emailId':user.emailId, 'token': token}, 201);
+        response(res, null,"User Created Successfully", {'userId':user.userId, 'username':user.username, 'emailId':user.emailId, 'token': token, 'wallet': user.wallet}, 201);
     }catch(err){
         console.log(err);
         response(res, err, "Error creating the user", null, 500);

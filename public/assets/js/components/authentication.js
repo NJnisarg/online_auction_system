@@ -93,7 +93,8 @@ const login = async () => {
         if(message === "User Authenticated Successfully"){
             let localData = {
                 userId: response.data.userId,
-                token: response.data.token
+                token: response.data.token,
+                wallet: response.data.wallet
             };
             localStorage.removeItem("userData");
             localStorage.setItem("userData", JSON.stringify(localData));
@@ -104,7 +105,7 @@ const login = async () => {
                 titleColor: 'black',
                 backgroundColor: 'green',
                 onClosing: () => {
-                    window.location = "home.html"
+                    // window.location = "home.html"
                 }
             });
         }
@@ -177,7 +178,8 @@ const register = async () => {
         if(response.message === "User Created Successfully") {
             let localData = {
                 userId: response.data.userId,
-                token: response.data.token
+                token: response.data.token,
+                wallet: response.data.wallet
             };
             localStorage.removeItem("userData");
             localStorage.setItem("userData", JSON.stringify(localData));

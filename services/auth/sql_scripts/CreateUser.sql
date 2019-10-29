@@ -1,4 +1,4 @@
-create procedure CreateUser(IN arg_username varchar(256), IN arg_emailId varchar(512), IN arg_hash varchar(512))
+CREATE PROCEDURE `CreateUser`(IN arg_username varchar(256), IN arg_emailId varchar(512), IN arg_hash varchar(512))
 begin
     declare arg_userId int default 0;
 
@@ -7,5 +7,5 @@ begin
 
     insert into Profile(userId) values (arg_userId);
 
-    select * from User where userId = arg_userId;
+    select * from User U inner join Profile P on U.userId = P.userId where U.userId = arg_userId;
 end

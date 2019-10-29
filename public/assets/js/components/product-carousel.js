@@ -235,6 +235,18 @@ $(document).ready(() => {
                     titleColor: 'black',
                     backgroundColor: 'yellow'
                 });
+                return;
+            }
+
+            if(bidVal > JSON.parse(userData).wallet)
+            {
+                iziToast.show({
+                    timeout: 1500,
+                    title: 'Error',
+                    message: 'Your wallet does not have sufficient funds. Please add money',
+                    titleColor: 'black',
+                    backgroundColor: 'yellow'
+                });
             }
 
             else{

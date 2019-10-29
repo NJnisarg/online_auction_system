@@ -96,10 +96,38 @@ let viewMyPurchases = purchases => {
                 $('#add-modal-pay-now').toggleClass('is-active', false);
             });
             $('#confirm-pay-amount').click(() => {
+
+                if(element.closingBid > JSON.parse(localStorage.getItem("userData")).wallet)
+                {
+                    iziToast.show({
+                        title: 'Error',
+                        message: 'Insufficient funds in the wallet!',
+                        backgroundColor: 'yellow',
+                        timeout: 1500
+                    });
+
+                    return;
+                }
+
                 makePayment(element.auctionId).then((response) => {
-                    
+                    console.log(response);
+                    iziToast.show({
+                        title: 'Success',
+                        message: 'Amount Paid successfully!',
+                        backgroundColor: 'green',
+                        timeout: 1500,
+                        onClosing: () => {
+                            window.location.reload()
+                        }
+                    });
                 }).catch(err => {
                     console.log(err);
+                    iziToast.show({
+                        title: 'Error',
+                        message: 'Error in paying the amount!',
+                        backgroundColor: 'yellow',
+                        timeout: 1500
+                    });
                 });
             });
         }

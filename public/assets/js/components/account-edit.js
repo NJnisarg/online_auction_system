@@ -1,5 +1,5 @@
 let baseUrl = 'http://localhost:3000';
-
+let imgUrl = null;
 const getUserProfile = async () => {
     let userData = localStorage.getItem('userData');
     userData = JSON.parse(userData);
@@ -16,6 +16,7 @@ const getUserProfile = async () => {
         let jsonResponse = await response.json();
 
         console.log(jsonResponse);
+        imgUrl = jsonResponse.data[0].imgUrl;
         return jsonResponse.data;
     } catch (err) {
         console.log(err);
@@ -252,6 +253,10 @@ let viewEditProfile = profile => {
 };
 
 const edit = async () => {
+    try{
+        imgUrl = "assets/images/backend/" + document.getElementById("imageUpload").files[0].name;
+    }catch(err){
+    }
 
     let editRequest = {
         name: $("#edit-first-name").val() + " " + $("#edit-last-name").val(),
@@ -263,7 +268,7 @@ const edit = async () => {
         city: $("#edit-city").val(),
         country: $("#edit-country").val(),
         wallet: parseFloat($("#edit-wallet").val()),
-        imgUrl: "assets/images/backend/" + document.getElementById("imageUpload").files[0].name
+        imgUrl: imgUrl
     };
     console.log(editRequest);
 
@@ -281,6 +286,9 @@ const edit = async () => {
                 window.location = "account.html"
             }
         });
+        let userData = JSON.parse(localStorage.getItem("userData"));
+        userData.wallet = editRequest.wallet;
+        localStorage.setItem("userData",JSON.stringify(userData));
     }
 };
 
