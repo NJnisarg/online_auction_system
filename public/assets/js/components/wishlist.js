@@ -301,6 +301,19 @@ $(document).ready( () => {
                 return;
             }
 
+            if(data.startingBid <= 0)
+            {
+                iziToast.show({
+                    title: 'Error',
+                    message: 'Bid value has to be non negative!',
+                    titleColor: 'black',
+                    messageColor: 'black',
+                    backgroundColor: 'yellow'
+                });
+
+                return;
+            }
+
             createAuction(data).then( response => {
                 if(response !== null) {
                     iziToast.show({

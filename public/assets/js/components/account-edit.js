@@ -258,6 +258,33 @@ const edit = async () => {
     }catch(err){
     }
 
+    let wal;
+    try{
+        wal = parseFloat($("#edit-wallet").val());
+        if(wal <= 0)
+        {
+            iziToast.show({
+                timeout: 1500,
+                title: 'Error',
+                message: "Please add non negative value to wallet",
+                titleColor: 'black',
+                backgroundColor: 'yellow'
+            });
+
+            return;
+        }
+    }catch (err){
+        iziToast.show({
+            timeout: 1500,
+            title: 'Error',
+            message: "Please add non negative value to wallet",
+            titleColor: 'black',
+            backgroundColor: 'yellow'
+        });
+
+        return;
+    }
+
     let editRequest = {
         name: $("#edit-first-name").val() + " " + $("#edit-last-name").val(),
         emailId: $("#edit-emailId").val(),
