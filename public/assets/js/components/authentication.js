@@ -24,11 +24,12 @@ const authenticateUser = async (login_email, login_password) => {
     }
 };
 
-const registerUser = async (register_username, register_password, register_email) => {
+const registerUser = async (register_username, register_password, register_email, roleId) => {
     let data = {
         'username': register_username,
         'emailId': register_email,
-        'password': register_password
+        'password': register_password,
+        'roleId': roleId
     };
 
     let options = {
@@ -94,7 +95,9 @@ const login = async () => {
             let localData = {
                 userId: response.data.userId,
                 token: response.data.token,
-                wallet: response.data.wallet
+                wallet: response.data.wallet,
+                permissions: response.data.permissions,
+                role:response.data.role
             };
             localStorage.removeItem("userData");
             localStorage.setItem("userData", JSON.stringify(localData));
@@ -136,6 +139,7 @@ const register = async () => {
     let register_email = $("#register-email").val();
     let register_password = $("#register-password").val();
     let confirm_password = $("#register-confirm").val();
+    let roleId = $("#dropdown-roles option:selected").val();
 
     if(register_username.length===0 || register_password.length===0 || register_email.length===0 || confirm_password.length===0) {
         iziToast.show({
@@ -172,14 +176,16 @@ const register = async () => {
     }
     else {
         console.log(register_username + "   " + register_password + "    " + register_email);
-        let response = await registerUser(register_username, register_password, register_email);
+        let response = await registerUser(register_username, register_password, register_email, roleId);
 
         console.log(response);
         if(response.message === "User Created Successfully") {
             let localData = {
                 userId: response.data.userId,
                 token: response.data.token,
-                wallet: response.data.wallet
+                wallet: response.data.wallet,
+                permissions: response.data.permissions,
+                role:response.data.role
             };
             localStorage.removeItem("userData");
             localStorage.setItem("userData", JSON.stringify(localData));

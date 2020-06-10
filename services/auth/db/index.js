@@ -1,5 +1,22 @@
 const { conn } = require('../../../database/connection');
 
+const getRole = async() => {
+    return new Promise((resolve, reject) => {
+
+        conn.query({
+            sql: 'call GetRole()',
+        },
+        [],
+        (error, results, fields) => {
+           if(error)
+           {
+               reject("GETPROFILE: Error fetching the data " + error);
+           }
+           resolve(results);
+        });
+    });
+};
+
 const findUser = async(options) => {
     return new Promise((resolve, reject) => {
         conn.query({
@@ -19,9 +36,9 @@ const findUser = async(options) => {
 const createUser = async(options) => {
     return new Promise((resolve, reject) => {
         conn.query({
-            sql: 'call CreateUser(?,?,?)'
+            sql: 'call CreateUser(?,?,?,?)'
         },
-        [options.username, options.emailId, options.password],
+        [options.username, options.emailId, options.password, options.roleId],
         (error, results, fields) => {
             if(error)
             {
@@ -76,6 +93,7 @@ const createProfile = async (options) => {
 
 
 module.exports = {
+    getRole,
     findUser,
     createUser,
     getProfile,

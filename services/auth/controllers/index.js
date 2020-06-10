@@ -6,6 +6,17 @@ const authConfig = {
     'jwtSecret':'ThisIsATestSecret'
 };
 
+const getRole = async (req, res) => {
+    try{
+        let result = await db.getRole();
+        console.log(result);
+        response(res, null, "Roles fetched Successfully", result[0], 200);
+    }catch (err) {
+        console.log(err);
+        response(res, err, "Error fetching the Roles", null, 500);
+    }
+};
+
 const authenticateUser = async (req, res) => {
     let password = req.body.password;
 
@@ -22,7 +33,9 @@ const authenticateUser = async (req, res) => {
                 'username':user.username,
                 'emailId':user.emailId,
                 'token': user.userId,
-                'wallet': user.wallet
+                'wallet': user.wallet,
+                'role': user.Roles.split(",")[0], // Hacky way to do it
+                'permissions': user.Permissions
             };
             response(res, null, "User Authenticated Successfully", finalRes, 200);
         }
@@ -42,7 +55,8 @@ const registerUser = async (req, res) => {
     let params = {
         username: req.body.username,
         emailId: req.body.emailId,
-        password: hashedPassword
+        password: hashedPassword,
+        roleId: req.body.roleId
     };
 
     try{
@@ -52,8 +66,17 @@ const registerUser = async (req, res) => {
         console.log(user);
         // let token = jwt.sign({id: user.userId}, authConfig.jwtSecret, {expiresIn: 86400});
         let token = user.userId;
+        let finalRes = {
+            'userId':user.userId,
+            'username':user.username,
+            'emailId':user.emailId,
+            'token': user.userId,
+            'wallet': user.wallet,
+            'role': user.Roles.split(",")[0], // Hacky way to do it
+            'permissions': user.Permissions
+        };
 
-        response(res, null,"User Created Successfully", {'userId':user.userId, 'username':user.username, 'emailId':user.emailId, 'token': token, 'wallet': user.wallet}, 201);
+        response(res, null,"User Created Successfully", finalRes, 201);
     }catch(err){
         console.log(err);
         response(res, err, "Error creating the user", null, 500);
@@ -95,6 +118,7 @@ const createProfile = async (req, res) => {
 
 
 module.exports = {
+    getRole,
     authenticateUser,
     registerUser,
     getProfile,

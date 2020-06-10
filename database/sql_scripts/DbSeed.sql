@@ -1,6 +1,7 @@
 CREATE PROCEDURE `DbSeed`()
 begin
     set foreign_key_checks = 0;
+
     truncate table Auction;
     truncate table Category;
     truncate table Invoice;
@@ -8,14 +9,20 @@ begin
     truncate table Product;
     truncate table Profile;
     truncate table User;
+    truncate table Role;
+    truncate table Permission;
+    truncate table RolePermission;
+    truncate table UserRole;
+
     set foreign_key_checks = 1;
 
+    -- Password is: Password1!
     insert into User
         (username, emailId, password)
     values
-        ("YashA", "YashA@gmail.com", "$2a$08$A8PjI5j6GOcsAmdIH9tpauqyp5iFB1CT.B1MGUSFuZ.HWQYDdZUcq"),
-        ("NJnisarg", "NJnisarg@gmail.com", "$2a$08$A8PjI5j6GOcsAmdIH9tpauqyp5iFB1CT.B1MGUSFuZ.HWQYDdZUcq"),
-        ("yashyash","yash786@gmail.com","$2a$08$A8PjI5j6GOcsAmdIH9tpauqyp5iFB1CT.B1MGUSFuZ.HWQYDdZUcq");
+        ("YashA", "YashA@gmail.com", "$2a$08$Sg/QnJnqWQB8oyxH4ZbeU.DbT5oF55tGmem72eawAePpyVuczCTOG"),
+        ("NJnisarg", "NJnisarg@gmail.com", "$2a$08$Sg/QnJnqWQB8oyxH4ZbeU.DbT5oF55tGmem72eawAePpyVuczCTOG"),
+        ("yashyash","yash786@gmail.com","$2a$08$Sg/QnJnqWQB8oyxH4ZbeU.DbT5oF55tGmem72eawAePpyVuczCTOG");
 
     insert into Profile
         (userId, name, imgUrl, houseNo, street, city, country, age, dob, sex, wallet)
@@ -40,13 +47,13 @@ begin
     insert into Auction
         (userId, title, imgUrl, status, description, startDate, endDate)
     values
-        (1, "Luxury Guitar", "assets/images/backend/guitar.jpg", 1, "The Slowhand Series Acoustic series, finely crafted guitar to give complete tonal control. Designed in premium gloss finish Mahogany body. Fret board and bridge made of Indian Rosewood thus, ensuring great sound quality. Built with Zebra top and equipped with an in-built equalizer.", '2019-10-25', '2019-11-02'),
-        (1, "Jersy 07", "assets/images/backend/jersey.jpg", 1, "Ronaldo's epic graphic tee in active Black colour. Our t-shirts and denim were made for each other. Our collection of graphic tees; vintage-inspired and modern styles to wear with your favourite jeans are made with soft jersey for extra comfort.", '2019-10-25', '2019-11-01'),
-        (2, "Monalisa Painting", "assets/images/backend/painting.jpg", 1, "Interio Crafts certificate frame well display your favorite achievements and keepsakes. These document frames are perfect enhancement for your award, certificate, prized achievements, school diplomas, photographs and treasured memorabilia.", '2019-10-25', '2019-11-02'),
-        (2, "Usain Bolt Shoes", "assets/images/backend/shoes.jpg", 1, "The Nike Domain 2 Unisex Cricket Shoe delivers lightweight cushioning and superb grip on the field with a Phylon midsole and aggressive traction pattern.Displaying a minimalistic, low-ankle silhouette, these white ‘Domain 2’ men’s cricket shoes from Nike", '2019-09-10', '2019-11-01'),
-        (1, "Vintage Fridge", "assets/images/backend/fridge.jpg", 1, "Keep your veggies and edibles fresh with this Croma refrigerator. The single door refrigerator is perfect for contemporary kitchen spaces and comes with innovative additions that will make you go wow.", '2019-10-25', '2019-10-30'),
-        (2, "Madonna's Nail Polish", "assets/images/backend/nail_polish.jpg", 1, "A cool gift for ladies.This display has a total of 6 separate compartments, ideal for displaying Lipsticks 6 compartments for lipsticks, nail paints. Made from High Quality Clear Acrylic.", '2019-10-25', '2019-10-27'),
-        (2, "Marshian cooker by Elon", "assets/images/backend/cooker.jpg", 1, "At Dynamic Cookwares, we believe in producing products of the utmost quality. Every product that flows through our manufacturing line is cared for and polished to perfection.", '2019-10-25', '2019-10-27');
+        (1, "Luxury Guitar", "assets/images/backend/guitar.jpg", 1, "The Slowhand Series Acoustic series, finely crafted guitar to give complete tonal control. Designed in premium gloss finish Mahogany body. Fret board and bridge made of Indian Rosewood thus, ensuring great sound quality. Built with Zebra top and equipped with an in-built equalizer.", '2019-10-25', '2020-11-02'),
+        (1, "Jersy 07", "assets/images/backend/jersey.jpg", 1, "Ronaldo's epic graphic tee in active Black colour. Our t-shirts and denim were made for each other. Our collection of graphic tees; vintage-inspired and modern styles to wear with your favourite jeans are made with soft jersey for extra comfort.", '2019-10-25', '2020-11-01'),
+        (2, "Monalisa Painting", "assets/images/backend/painting.jpg", 1, "Interio Crafts certificate frame well display your favorite achievements and keepsakes. These document frames are perfect enhancement for your award, certificate, prized achievements, school diplomas, photographs and treasured memorabilia.", '2019-10-25', '2020-11-02'),
+        (2, "Usain Bolt Shoes", "assets/images/backend/shoes.jpg", 1, "The Nike Domain 2 Unisex Cricket Shoe delivers lightweight cushioning and superb grip on the field with a Phylon midsole and aggressive traction pattern.Displaying a minimalistic, low-ankle silhouette, these white ‘Domain 2’ men’s cricket shoes from Nike", '2019-09-10', '2020-11-01'),
+        (1, "Vintage Fridge", "assets/images/backend/fridge.jpg", 1, "Keep your veggies and edibles fresh with this Croma refrigerator. The single door refrigerator is perfect for contemporary kitchen spaces and comes with innovative additions that will make you go wow.", '2019-10-25', '2020-10-30'),
+        (2, "Madonna's Nail Polish", "assets/images/backend/nail_polish.jpg", 1, "A cool gift for ladies.This display has a total of 6 separate compartments, ideal for displaying Lipsticks 6 compartments for lipsticks, nail paints. Made from High Quality Clear Acrylic.", '2019-10-25', '2020-10-27'),
+        (2, "Marshian cooker by Elon", "assets/images/backend/cooker.jpg", 1, "At Dynamic Cookwares, we believe in producing products of the utmost quality. Every product that flows through our manufacturing line is cared for and polished to perfection.", '2019-10-25', '2020-10-27');
 
     insert into Product
         (title, imgUrl, description, startingBid, currentBid, closingBid, categoryId, auctionId)
@@ -72,4 +79,38 @@ begin
         (3,4,5000);
 
     insert into Invoice(txnNo,txnDate,amount,userId,productId) values (1,'2019-10-27',20000,3,7);
+
+    insert into Role(roleName) values ("Admin");
+    insert into Role(roleName) values ("Auctioner");
+    insert into Role(roleName) values ("NormalUser");
+    insert into Role(roleName) values ("Guest");
+
+    insert into Permission(permissionName) values ("CAN_CREATE_AUCTION");
+    insert into Permission(permissionName) values ("CAN_READ_AUCTION");
+    insert into Permission(permissionName) values ("CAN_UPDATE_AUCTION");
+    insert into Permission(permissionName) values ("CAN_DELETE_AUCTION");
+
+    -- Guest
+    insert into RolePermission(roleId, permissionId) values (4,2);
+
+    -- Normal Guest
+    insert into RolePermission(roleId, permissionId) values (3,2);
+
+    -- Auctioner
+    insert into RolePermission(roleId, permissionId) values (2,1);
+    insert into RolePermission(roleId, permissionId) values (2,2);
+    insert into RolePermission(roleId, permissionId) values (2,3);
+
+    -- Admin
+    insert into RolePermission(roleId, permissionId) values (1,1);
+    insert into RolePermission(roleId, permissionId) values (1,2);
+    insert into RolePermission(roleId, permissionId) values (1,3);
+    insert into RolePermission(roleId, permissionId) values (1,4);
+
+
+    insert into UserRole(userId,roleId) values (1,1);
+    insert into UserRole(userId,roleId) values (2,2);
+    insert into UserRole(userId,roleId) values (3,3);
+
+    set foreign_key_checks = 1;
 end

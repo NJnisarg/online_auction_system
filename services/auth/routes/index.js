@@ -3,6 +3,10 @@ const router = express.Router();
 const controllers = require('../controllers/index');
 const { AuthorizationMiddleware } = require('../../../lib/authMiddleware');
 
+/* Get Role info for register */
+router.get('/getProfile', controllers.getRole);
+
+/* Login and Register */
 router.post('/login', controllers.authenticateUser);
 router.post('/register', controllers.registerUser);
 
