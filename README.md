@@ -19,6 +19,6 @@
         - If everything is fine, you should have a proper database schema setup.
     - **Application**:
         - To start the server, run these commands:
-        `npm install`
-        `npm start`
+            - `npm install`
+            - `npm start`
         - After that goto: `localhost:3000/home.html` in browser. Your application should be up and running.
